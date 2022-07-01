@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:elevation="30dp"
+        app:cardBackgroundColor="#E3F2FD"
+        app:cardCornerRadius="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quiz Title"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.042" />
+
+            <TextView
+                android:id="@+id/tvTranslate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Question"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/tvTitle"
+                app:layout_constraintHorizontal_bias="0.482"
+                app:layout_constraintStart_toStartOf="@+id/tvTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+            <Button
+                android:id="@+id/btNomen"
+                style="@style/bordered_button"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#00FFFFFF"
+                android:text="Answer A"
+                android:textSize="28sp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTranslate" />
+
+            <Button
+                android:id="@+id/btAnswerB"
+                style="@style/red_bordered_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Answer B"
+                android:textSize="28sp"
+                app:layout_constraintEnd_toEndOf="@+id/btNomen"
+                app:layout_constraintStart_toStartOf="@+id/btNomen"
+                app:layout_constraintTop_toBottomOf="@+id/btNomen" />
+
+            <Button
+                android:id="@+id/btAnswerC"
+                style="@style/bordered_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Answer C"
+                android:textSize="28sp"
+                app:layout_constraintEnd_toEndOf="@+id/btAnswerB"
+                app:layout_constraintStart_toStartOf="@+id/btAnswerB"
+                app:layout_constraintTop_toBottomOf="@+id/btAnswerB" />
+
+            <Button
+                android:id="@+id/btAnswerD"
+                style="@style/green_bordered_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Answer D"
+                android:textSize="28sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/btAnswerC"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/btAnswerC"
+                app:layout_constraintTop_toBottomOf="@+id/btAnswerC"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

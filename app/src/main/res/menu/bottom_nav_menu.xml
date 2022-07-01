@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/home__v5"
+        android:title="Home"
+        android:menuCategory="secondary"/>
+
+    <item
+        android:id="@+id/vocableFragment"
+        android:icon="@drawable/glossary"
+        android:title="@string/title_fragment_vocable"
+        android:menuCategory="secondary"/>
+
+    <item
+        android:id="@+id/quizFragment"
+        android:icon="@drawable/quiz_icon"
+        android:title="@string/title_fragment_quiz"
+        android:menuCategory="secondary"/>
+    <item
+        android:id="@+id/account"
+        android:icon="@drawable/user"
+        android:title="@string/title_account"
+        android:menuCategory="secondary"/>
+    <item
+        android:id="@+id/app_bar_search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="Search"
+        app:actionViewClass="android.widget.SearchView"
+        android:menuCategory="secondary"/>
+
+</menu>

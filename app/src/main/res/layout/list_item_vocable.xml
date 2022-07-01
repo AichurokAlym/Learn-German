@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:elevation="30dp"
+        app:cardBackgroundColor="#E1F5FE"
+        app:cardCornerRadius="15dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvVocable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Word"
+                android:textColor="@color/black"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.042" />
+
+            <TextView
+                android:id="@+id/tvTranslate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Translate"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="italic"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@+id/tvVocable"
+                app:layout_constraintHorizontal_bias="0.482"
+                app:layout_constraintStart_toStartOf="@+id/tvVocable"
+                app:layout_constraintTop_toBottomOf="@+id/tvVocable" />
+
+            <TextView
+                android:id="@+id/tvExsampleSentence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Exsample Sentence"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="@+id/tvTranslate"
+                app:layout_constraintHorizontal_bias="0.477"
+                app:layout_constraintStart_toStartOf="@+id/tvTranslate"
+                app:layout_constraintTop_toBottomOf="@+id/tvTranslate" />
+
+            <Button
+                android:id="@+id/btDer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:backgroundTint="#000000"
+                android:text="Der"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvExsampleSentence" />
+
+            <Button
+                android:id="@+id/btDie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:backgroundTint="#F43535"
+                android:text="Die"
+                android:visibility="visible"
+                app:layout_constraintStart_toEndOf="@+id/btDer"
+                app:layout_constraintTop_toBottomOf="@+id/tvExsampleSentence" />
+
+            <Button
+                android:id="@+id/btDas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:backgroundTint="#E8E04F"
+                android:text="Das"
+                android:textColor="@color/black"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/btDie"
+                app:layout_constraintTop_toBottomOf="@+id/tvExsampleSentence" />
+
+            <TextView
+                android:id="@+id/tvArtikel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Das"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/tvVocable"
+                app:layout_constraintEnd_toStartOf="@+id/tvVocable"
+                app:layout_constraintHorizontal_bias="0.808"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvVocable"
+                app:layout_constraintVertical_bias="0.357" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

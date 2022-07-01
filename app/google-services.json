@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "615563127961",
+    "project_id": "learngerman-15a11",
+    "storage_bucket": "learngerman-15a11.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:615563127961:android:5ad73de29ad1108f591c08",
+        "android_client_info": {
+          "package_name": "de.syntaxinstitut.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "615563127961-hv1qe0v1drqfj55k8dfbadh3qipprgou.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0ksRyOTEK5gOmhw8H8uksZF3rdaNnWcY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "615563127961-hv1qe0v1drqfj55k8dfbadh3qipprgou.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
