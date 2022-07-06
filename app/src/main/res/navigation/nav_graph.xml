@@ -36,6 +36,9 @@
         <action
             android:id="@+id/action_menuFragment_to_quizFragment"
             app:destination="@id/quizFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_my_account"
+            app:destination="@id/my_account" />
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
@@ -58,5 +61,16 @@
         <action
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/my_account"
+        android:name="de.syntaxinstitut.myapplication.my_account"
+        android:label="my_account" >
+        <action
+            android:id="@+id/action_my_account_to_quizFragment"
+            app:destination="@id/quizFragment" />
+        <action
+            android:id="@+id/action_my_account_to_vocableFragment"
+            app:destination="@id/vocableFragment" />
     </fragment>
 </navigation>

@@ -20,7 +20,7 @@
         android:title="@string/title_fragment_quiz"
         android:menuCategory="secondary"/>
     <item
-        android:id="@+id/account"
+        android:id="@+id/my_account"
         android:icon="@drawable/user"
         android:title="@string/title_account"
         android:menuCategory="secondary"/>

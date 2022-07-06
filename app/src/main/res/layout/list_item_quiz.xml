@@ -46,7 +46,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
             <Button
-                android:id="@+id/btNomen"
+                android:id="@+id/btAnswerA"
                 style="@style/bordered_button"
                 android:layout_width="380dp"
                 android:layout_height="wrap_content"
@@ -68,9 +68,9 @@
                 android:layout_marginTop="8dp"
                 android:text="Answer B"
                 android:textSize="28sp"
-                app:layout_constraintEnd_toEndOf="@+id/btNomen"
-                app:layout_constraintStart_toStartOf="@+id/btNomen"
-                app:layout_constraintTop_toBottomOf="@+id/btNomen" />
+                app:layout_constraintEnd_toEndOf="@+id/btAnswerA"
+                app:layout_constraintStart_toStartOf="@+id/btAnswerA"
+                app:layout_constraintTop_toBottomOf="@+id/btAnswerA" />
 
             <Button
                 android:id="@+id/btAnswerC"

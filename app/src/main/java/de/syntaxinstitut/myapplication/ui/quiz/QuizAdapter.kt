@@ -9,13 +9,14 @@ import de.syntaxinstitut.myapplication.R
 import de.syntaxinstitut.myapplication.data.model.Quiz
 
 class QuizAdapter(
-    private val dataset: List<Quiz>
+    private val dataset: List<Quiz>,
+    private val selectCallBack: (View, String) -> Unit
 ) : RecyclerView.Adapter<QuizAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
        // val tvQuizTitle: TextView = itemView.findViewById(R.id.tvVocable)
         val tvQuestion: TextView = itemView.findViewById(R.id.tvTranslate)
-        val answerA: TextView = itemView.findViewById(R.id.btNomen)
+        val answerA: TextView = itemView.findViewById(R.id.btAnswerA)
         val answerB: TextView = itemView.findViewById(R.id.btAnswerB)
         val answerC: TextView = itemView.findViewById(R.id.btAnswerC)
         val answerD: TextView = itemView.findViewById(R.id.btAnswerD)
@@ -47,6 +48,10 @@ class QuizAdapter(
         holder.answerC.text = quiz.answerC
         holder.answerD.text = quiz.answerD
 
+        holder.answerA.setOnClickListener {
+
+            selectCallBack(holder.answerA, quiz.answerA)
+        }
 
 
     }
