@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../../layout/custom_preview.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable-v24/bordershape.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable-v24/buttonshape.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/answer_cards_correct.xml" value="0.1095" />
+        <entry key="app/src/main/res/drawable/answer_cards_style.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/fragment_my_account.xml" value="0.28600769042968754" />
+        <entry key="app/src/main/res/layout/fragment_my_quiz.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/fragment_quiz.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.27726530852141207" />
+        <entry key="app/src/main/res/layout/fragment_vocable.xml" value="0.22491149902343752" />
+        <entry key="app/src/main/res/layout/list_item_quiz.xml" value="0.3498387862224968" />
+        <entry key="app/src/main/res/layout/list_item_verben.xml" value="0.3943872330036569" />
+        <entry key="app/src/main/res/layout/list_item_vocable.xml" value="0.275" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.2453125" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

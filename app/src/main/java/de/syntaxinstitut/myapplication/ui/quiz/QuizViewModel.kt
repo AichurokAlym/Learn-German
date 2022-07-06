@@ -36,7 +36,7 @@ class QuizViewModel(application: Application) : AndroidViewModel(application) {
      * Diese Funktion startet das Spiel neu, indem alle Variablen zurückgesetzt werden
      */
     fun restartGame() {
-        _currentQuestion = questionsList[0]
+        //_currentQuestion = questionsList[0]
 
     }
 
@@ -44,15 +44,13 @@ class QuizViewModel(application: Application) : AndroidViewModel(application) {
      * Diese Funktion überprüft, ob die Frage richtig oder falsch beantwortet wurde und setzt die
      * Variablen dementsprechend.
      */
-    fun checkAnswer(answerIndex: Int) {
-        if (answerIndex == _currentQuestion.rightAnswer){
+    fun checkAnswer(quiz: Quiz, answerIndex: Int) {
+        if (answerIndex == quiz.rightAnswer){
             _lastAnswer = true
-
             } else {
                 questionIndex++
-                _currentQuestion = questionsList[questionIndex]
+               // _currentQuestion = questionsList[questionIndex]
                 _lastAnswer = false
-
             }
 
     }

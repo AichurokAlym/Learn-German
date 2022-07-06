@@ -10,7 +10,7 @@ import de.syntaxinstitut.myapplication.data.model.Quiz
 
 class QuizAdapter(
     private val dataset: List<Quiz>,
-    private val selectCallBack: (View, String) -> Unit
+    private val checkAnswerUpdateUI: (Quiz, Int) -> Unit
 ) : RecyclerView.Adapter<QuizAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -49,8 +49,24 @@ class QuizAdapter(
         holder.answerD.text = quiz.answerD
 
         holder.answerA.setOnClickListener {
+            val success = checkAnswerUpdateUI(quiz, 1)
+            if (success == true) {
+                holder.answerA.setBackgroundResource(R.drawable.answer_cards_correct)
+            } else {
+                holder.answerA.setBackgroundResource(R.drawable.answer_cards_wrong)
+            }
+        }
 
-            selectCallBack(holder.answerA, quiz.answerA)
+        holder.answerB.setOnClickListener {
+            checkAnswerUpdateUI(quiz, 2)
+        }
+
+        holder.answerC.setOnClickListener {
+            checkAnswerUpdateUI(quiz, 3)
+        }
+
+        holder.answerD.setOnClickListener {
+            checkAnswerUpdateUI(quiz, 4)
         }
 
 

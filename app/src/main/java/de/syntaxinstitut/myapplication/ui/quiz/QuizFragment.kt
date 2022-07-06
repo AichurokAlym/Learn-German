@@ -6,11 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import de.syntaxinstitut.myapplication.R
+import de.syntaxinstitut.myapplication.data.model.Quiz
 import de.syntaxinstitut.myapplication.databinding.FragmentQuizBinding
 
 /**
@@ -18,16 +20,12 @@ import de.syntaxinstitut.myapplication.databinding.FragmentQuizBinding
  * Use the [fragment_quiz_rv.newInstance] factory method to
  * create an instance of this fragment.
  */
-class QuizFragment : Fragment() {
+abstract class QuizFragment : Fragment() {
 
     // Initialisiere binding & viewModel
     private lateinit var binding: FragmentQuizBinding
 
     private val viewModel: QuizViewModel by activityViewModels()
-
-    private lateinit var backgroundNormal: Drawable
-    private lateinit var backgroundWrong: Drawable
-    private lateinit var backgroundCorrect: Drawable
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,27 +45,20 @@ class QuizFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Hole die Hintergründe aus der Ressource
-        backgroundNormal = ContextCompat.getDrawable(requireContext(), R.drawable.answer_cards_correct)!!
-        backgroundWrong = ContextCompat.getDrawable(requireContext(), R.drawable.answer_cards_wrong)!!
-        backgroundCorrect = ContextCompat.getDrawable(requireContext(), R.drawable.answer_cards_style)!!
-
-
-
         val recyclerView = binding.rvQuiz
 
-        recyclerView.adapter = QuizAdapter(viewModel.questionsList,)
+        recyclerView.adapter = QuizAdapter(viewModel.questionsList,::checkAnswerUpdateUI)
     }
 
-    fun checkAnswerUpdateUI(textView: TextView, answerIndex: Int) {
+     fun checkAnswerUpdateUI(quiz: Quiz, answerIndex: Int): Boolean {
 
-        viewModel.checkAnswer(answerIndex)
+        viewModel.checkAnswer(quiz, answerIndex)
+
+        if (viewModel.lastAnswer == true) {
+            return true
+        } else {
+            return false
+        }
 
     }
-
-    fun selectCallBack(view: View, correctAnswer: String) {
-
-    }
-
-
 }
