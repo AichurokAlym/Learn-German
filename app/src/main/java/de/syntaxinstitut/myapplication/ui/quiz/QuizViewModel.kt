@@ -48,7 +48,7 @@ class QuizViewModel(application: Application) : AndroidViewModel(application) {
         if (answerIndex == quiz.rightAnswer){
             _lastAnswer = true
             } else {
-                questionIndex++
+                //questionIndex++
                // _currentQuestion = questionsList[questionIndex]
                 _lastAnswer = false
             }

@@ -45,51 +45,58 @@
                 app:layout_constraintStart_toStartOf="@+id/tvTitle"
                 app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btAnswerA"
-                style="@style/bordered_button"
                 android:layout_width="380dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:background="#00FFFFFF"
+                android:foreground="@drawable/answer_cards_style"
                 android:text="Answer A"
-                android:textSize="28sp"
+                android:textAllCaps="false"
                 android:textColor="@color/black"
+                android:textSize="28sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintHorizontal_bias="0.533"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvTranslate" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btAnswerB"
-                style="@style/bordered_button"
+                android:background="#00FFFFFF"
+                android:foreground="@drawable/answer_cards_style"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:textAllCaps="false"
                 android:text="Answer B"
                 android:textSize="28sp"
                 app:layout_constraintEnd_toEndOf="@+id/btAnswerA"
                 app:layout_constraintStart_toStartOf="@+id/btAnswerA"
                 app:layout_constraintTop_toBottomOf="@+id/btAnswerA" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btAnswerC"
-                style="@style/bordered_button"
+                android:background="#00FFFFFF"
+                android:foreground="@drawable/answer_cards_style"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:textAllCaps="false"
                 android:text="Answer C"
                 android:textSize="28sp"
                 app:layout_constraintEnd_toEndOf="@+id/btAnswerB"
                 app:layout_constraintStart_toStartOf="@+id/btAnswerB"
                 app:layout_constraintTop_toBottomOf="@+id/btAnswerB" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btAnswerD"
-                style="@style/bordered_button"
+                android:background="#00FFFFFF"
+                android:foreground="@drawable/answer_cards_style"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:textAllCaps="false"
                 android:text="Answer D"
                 android:textSize="28sp"
                 app:layout_constraintBottom_toBottomOf="parent"

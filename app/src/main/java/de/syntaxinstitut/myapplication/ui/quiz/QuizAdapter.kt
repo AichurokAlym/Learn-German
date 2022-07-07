@@ -1,5 +1,6 @@
 package de.syntaxinstitut.myapplication.ui.quiz
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,8 +10,9 @@ import de.syntaxinstitut.myapplication.R
 import de.syntaxinstitut.myapplication.data.model.Quiz
 
 class QuizAdapter(
+    private val context: Context,
     private val dataset: List<Quiz>,
-    private val checkAnswerUpdateUI: (Quiz, Int) -> Unit
+    private val checkAnswerUpdateUI: (Quiz, Int) -> Boolean
 ) : RecyclerView.Adapter<QuizAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -51,25 +53,38 @@ class QuizAdapter(
         holder.answerA.setOnClickListener {
             val success = checkAnswerUpdateUI(quiz, 1)
             if (success == true) {
-                holder.answerA.setBackgroundResource(R.drawable.answer_cards_correct)
+                holder.answerA.foreground = context.getDrawable(R.drawable.answer_cards_correct)
             } else {
-                holder.answerA.setBackgroundResource(R.drawable.answer_cards_wrong)
+                holder.answerA.foreground = context.getDrawable(R.drawable.answer_cards_wrong)
             }
         }
 
         holder.answerB.setOnClickListener {
-            checkAnswerUpdateUI(quiz, 2)
+            val success = checkAnswerUpdateUI(quiz, 2)
+            if (success == true) {
+                holder.answerB.foreground = context.getDrawable(R.drawable.answer_cards_correct)
+            } else {
+                holder.answerB.foreground = context.getDrawable(R.drawable.answer_cards_wrong)
+            }
         }
 
         holder.answerC.setOnClickListener {
-            checkAnswerUpdateUI(quiz, 3)
+            val success = checkAnswerUpdateUI(quiz, 3)
+            if (success == true) {
+                holder.answerC.foreground = context.getDrawable(R.drawable.answer_cards_correct)
+            } else {
+                holder.answerC.foreground = context.getDrawable(R.drawable.answer_cards_wrong)
+            }
         }
 
         holder.answerD.setOnClickListener {
-            checkAnswerUpdateUI(quiz, 4)
+            val success = checkAnswerUpdateUI(quiz, 4)
+            if (success == true) {
+                holder.answerD.foreground = context.getDrawable(R.drawable.answer_cards_correct)
+            } else {
+                holder.answerD.foreground = context.getDrawable(R.drawable.answer_cards_wrong)
+            }
         }
-
-
     }
 
     override fun getItemCount(): Int {

@@ -1,13 +1,11 @@
 package de.syntaxinstitut.myapplication.ui.vocable
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.GridLayout
 import android.widget.TextView
-import android.widget.Toast
-import androidx.cardview.widget.CardView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -53,11 +51,15 @@ class VocableFragment : Fragment() {
 
         binding.btDer.setOnClickListener {
           if(viewModel.correctAnswer == "der") {
-              val tv = viewModel.currentSelected as TextView
+              val tv = viewModel.currentSelectedArtikelTv as TextView
               tv.text = "der"
+              tv.setTextColor(Color.parseColor("#FFFFFF"))
               tv.visibility = View.VISIBLE
+
+              val cv = viewModel.currentSelected as MaterialCardView
+              cv.setBackgroundColor(Color.parseColor("#000000"))
           } else {
-              val tv = viewModel.currentSelected as TextView
+              val tv = viewModel.currentSelectedArtikelTv as TextView
               tv.text = "versuch noch mal!"
               tv.visibility = View.VISIBLE
           }
@@ -65,11 +67,15 @@ class VocableFragment : Fragment() {
 
         binding.btDie.setOnClickListener {
             if (viewModel.correctAnswer == "die") {
-                val tv = viewModel.currentSelected as TextView
+                val tv = viewModel.currentSelectedArtikelTv as TextView
                 tv.text = "die"
                 tv.visibility = View.VISIBLE
+
+                val cv = viewModel.currentSelected as MaterialCardView
+                cv.setBackgroundColor(Color.parseColor("#F43535"))
+
             } else {
-                val tv = viewModel.currentSelected as TextView
+                val tv = viewModel.currentSelectedArtikelTv as TextView
                 tv.text = "versuch noch mal!"
                 tv.visibility = View.VISIBLE
             }
@@ -77,21 +83,23 @@ class VocableFragment : Fragment() {
 
         binding.btDas.setOnClickListener {
             if (viewModel.correctAnswer == "das") {
-                val tv = viewModel.currentSelected as TextView
+                val tv = viewModel.currentSelectedArtikelTv as TextView
                 tv.text = "das"
                 tv.visibility = View.VISIBLE
-                //val cv = viewModel.currentSelected as MaterialCardView
-                //cv.setCardBackgroundColor()
+
+                val cv = viewModel.currentSelected as MaterialCardView
+                cv.setBackgroundColor(Color.parseColor("#E8E04F"))
+
             } else {
-                val tv = viewModel.currentSelected as TextView
+                val tv = viewModel.currentSelectedArtikelTv as TextView
                 tv.text = "versuch noch mal!"
                 tv.visibility = View.VISIBLE
             }
         }
     }
 
-    fun selectCallBack(view: View, correctAnswer: String) {
-        viewModel.setCurrentSelected(view, correctAnswer)
+    fun selectCallBack(view: View, cardView: View, correctAnswer: String) {
+        viewModel.setCurrentSelected(view,cardView, correctAnswer)
 
     }
 

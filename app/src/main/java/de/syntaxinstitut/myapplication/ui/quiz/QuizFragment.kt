@@ -1,26 +1,18 @@
 package de.syntaxinstitut.myapplication.ui.quiz
 
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
-import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import de.syntaxinstitut.myapplication.R
 import de.syntaxinstitut.myapplication.data.model.Quiz
 import de.syntaxinstitut.myapplication.databinding.FragmentQuizBinding
 
-/**
- * A simple [Fragment] subclass.
- * Use the [fragment_quiz_rv.newInstance] factory method to
- * create an instance of this fragment.
- */
-abstract class QuizFragment : Fragment() {
+
+ class QuizFragment : Fragment() {
 
     // Initialisiere binding & viewModel
     private lateinit var binding: FragmentQuizBinding
@@ -47,10 +39,10 @@ abstract class QuizFragment : Fragment() {
 
         val recyclerView = binding.rvQuiz
 
-        recyclerView.adapter = QuizAdapter(viewModel.questionsList,::checkAnswerUpdateUI)
+        recyclerView.adapter = QuizAdapter(requireContext(), viewModel.questionsList,::checkAnswerUpdateUI)
     }
 
-     fun checkAnswerUpdateUI(quiz: Quiz, answerIndex: Int): Boolean {
+     fun checkAnswerUpdateUI(quiz: Quiz, answerIndex: Int) : Boolean {
 
         viewModel.checkAnswer(quiz, answerIndex)
 

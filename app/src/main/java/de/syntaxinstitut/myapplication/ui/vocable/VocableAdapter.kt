@@ -13,7 +13,7 @@ import de.syntaxinstitut.myapplication.data.model.Vocable
 
 class VocableAdapter(
     private val dataset: List<Vocable>,
-    private val selectCallBack: (View, String) -> Unit
+    private val selectCallBack: (View,View, String) -> Unit
 ) : RecyclerView.Adapter<VocableAdapter.ItemViewHolder>() {
 
 
@@ -64,7 +64,7 @@ class VocableAdapter(
         }
 
         holder.radioButton.setOnClickListener {
-            selectCallBack(holder.tvArtikel, vocable.artikel)
+            selectCallBack(holder.tvArtikel, holder.cvCardView, vocable.artikel)
         }
 
 
