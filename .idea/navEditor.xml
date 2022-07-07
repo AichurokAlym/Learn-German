@@ -24,6 +24,11 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="action_homeFragment_to_verbFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_menuFragment_to_quizFragment">
                               <value>
                                 <LayoutPositions />
@@ -44,8 +49,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="471" />
-                            <option name="y" value="729" />
+                            <option name="x" value="410" />
+                            <option name="y" value="897" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -134,6 +139,27 @@
                               </value>
                             </entry>
                             <entry key="action_signUpFragment_to_signInFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="verbFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="778" />
+                            <option name="y" value="190" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_verbFragment_to_homeFragment">
                               <value>
                                 <LayoutPositions />
                               </value>

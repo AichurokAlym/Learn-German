@@ -16,9 +16,6 @@ class VocableViewModel(application: Application) : AndroidViewModel(application)
     val vRepository = VocableRepository()
     val vocableList = vRepository.loadVocabularies()
 
-    val verbRepository = VerbRepository()
-    val verbList = verbRepository.loadVerbs()
-
 
     private var _currentSelectedArtikelTV: View? = null
     val currentSelectedArtikelTv: View?

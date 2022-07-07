@@ -1,4 +1,4 @@
-package de.syntaxinstitut.myapplication
+package de.syntaxinstitut.myapplication.ui.vocable.verb
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import de.syntaxinstitut.myapplication.R
 import de.syntaxinstitut.myapplication.databinding.FragmentVerbBinding
 import de.syntaxinstitut.myapplication.ui.vocable.VocableAdapter
 import de.syntaxinstitut.myapplication.ui.vocable.VocableViewModel
@@ -15,7 +16,7 @@ class VerbFragment : Fragment() {
 
     private lateinit var binding: FragmentVerbBinding
 
-    private val viewModel: VocableViewModel by viewModels()
+    private val viewModel: VerbViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,7 +33,7 @@ class VerbFragment : Fragment() {
 
         val rvVerb = binding.rvVerb
 
-        //rvVerb.adapter = VocableAdapter(viewModel.verbList)
+        rvVerb.adapter = VerbAdapter(viewModel.verbList)
     }
 
 

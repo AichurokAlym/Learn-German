@@ -62,6 +62,10 @@ class HomeFragment : Fragment() {
             findNavController().navigate(HomeFragmentDirections.actionMenuFragmentToVocabularyFragment())
         }
 
+        binding.btVerb.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToVerbFragment())
+        }
+
         binding.btQuiz.setOnClickListener {
             val menuitem = (activity as MainActivity).binding.bottomNavigation.menu.get(2)
             NavigationUI.onNavDestinationSelected(menuitem, findNavController())
