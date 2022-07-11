@@ -56,7 +56,7 @@ class VocableFragment : Fragment() {
               tv.setTextColor(Color.parseColor("#FFFFFF"))
               tv.visibility = View.VISIBLE
 
-              val tvWord =
+
 
               val cv = viewModel.currentSelected as MaterialCardView
               cv.setBackgroundColor(Color.parseColor("#000000"))
