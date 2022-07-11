@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
 import de.syntaxinstitut.myapplication.R
 import de.syntaxinstitut.myapplication.data.model.Quiz
@@ -18,10 +19,10 @@ class QuizAdapter(
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
        // val tvQuizTitle: TextView = itemView.findViewById(R.id.tvVocable)
         val tvQuestion: TextView = itemView.findViewById(R.id.tvTranslate)
-        val answerA: TextView = itemView.findViewById(R.id.btAnswerA)
-        val answerB: TextView = itemView.findViewById(R.id.btAnswerB)
-        val answerC: TextView = itemView.findViewById(R.id.btAnswerC)
-        val answerD: TextView = itemView.findViewById(R.id.btAnswerD)
+        val answerA: AppCompatButton = itemView.findViewById(R.id.btAnswerA)
+        val answerB: AppCompatButton = itemView.findViewById(R.id.btAnswerB)
+        val answerC: AppCompatButton = itemView.findViewById(R.id.btAnswerC)
+        val answerD: AppCompatButton = itemView.findViewById(R.id.btAnswerD)
 
     }
 
@@ -50,45 +51,45 @@ class QuizAdapter(
         holder.answerC.text = quiz.answerC
         holder.answerD.text = quiz.answerD
 
+        if (!quiz.clickedA) {
+            holder.answerA.foreground = context.getDrawable(R.drawable.answer_cards_style)
+            holder.answerB.foreground = context.getDrawable(R.drawable.answer_cards_style)
+            holder.answerC.foreground = context.getDrawable(R.drawable.answer_cards_style)
+            holder.answerD.foreground = context.getDrawable(R.drawable.answer_cards_style)
+        }
+
+
         holder.answerA.setOnClickListener {
-            val success = checkAnswerUpdateUI(quiz, 1)
-            if (success == true) {
-                holder.answerA.foreground = context.getDrawable(R.drawable.answer_cards_correct)
-            } else {
-                holder.answerA.foreground = context.getDrawable(R.drawable.answer_cards_wrong)
-            }
+            checkedAnswer(quiz, 1, it as AppCompatButton)
         }
 
         holder.answerB.setOnClickListener {
-            val success = checkAnswerUpdateUI(quiz, 2)
-            if (success == true) {
-                holder.answerB.foreground = context.getDrawable(R.drawable.answer_cards_correct)
-            } else {
-                holder.answerB.foreground = context.getDrawable(R.drawable.answer_cards_wrong)
-            }
+            checkedAnswer(quiz, 2, it as AppCompatButton)
         }
 
         holder.answerC.setOnClickListener {
-            val success = checkAnswerUpdateUI(quiz, 3)
-            if (success == true) {
-                holder.answerC.foreground = context.getDrawable(R.drawable.answer_cards_correct)
-            } else {
-                holder.answerC.foreground = context.getDrawable(R.drawable.answer_cards_wrong)
-            }
+            checkedAnswer(quiz, 3, it as AppCompatButton)
         }
 
         holder.answerD.setOnClickListener {
-            val success = checkAnswerUpdateUI(quiz, 4)
-            if (success == true) {
-                holder.answerD.foreground = context.getDrawable(R.drawable.answer_cards_correct)
-            } else {
-                holder.answerD.foreground = context.getDrawable(R.drawable.answer_cards_wrong)
-            }
+           checkedAnswer(quiz, 4, it as AppCompatButton)
+        }
+    }
+
+    fun checkedAnswer (quiz: Quiz, int: Int, button: AppCompatButton) {
+        val success = checkAnswerUpdateUI(quiz, int)
+        if (success == true) {
+            button.foreground = context.getDrawable(R.drawable.answer_cards_correct)
+            quiz.clickedA = true
+        } else {
+            button.foreground = context.getDrawable(R.drawable.answer_cards_wrong)
         }
     }
 
     override fun getItemCount(): Int {
        return dataset.size
     }
+
+
 
 }

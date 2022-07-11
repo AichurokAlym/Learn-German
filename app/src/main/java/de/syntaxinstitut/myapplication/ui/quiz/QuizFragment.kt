@@ -40,6 +40,9 @@ import de.syntaxinstitut.myapplication.databinding.FragmentQuizBinding
         val recyclerView = binding.rvQuiz
 
         recyclerView.adapter = QuizAdapter(requireContext(), viewModel.questionsList,::checkAnswerUpdateUI)
+
+        // verbesserte Performance bei fixer Größe
+        recyclerView.setHasFixedSize(true)
     }
 
      fun checkAnswerUpdateUI(quiz: Quiz, answerIndex: Int) : Boolean {

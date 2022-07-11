@@ -60,8 +60,11 @@ class VocableFragment : Fragment() {
               cv.setBackgroundColor(Color.parseColor("#000000"))
           } else {
               val tv = viewModel.currentSelectedArtikelTv as TextView
-              tv.text = "versuch noch mal!"
+              tv.text = "versuche es nochmal!"
               tv.visibility = View.VISIBLE
+
+              val cv = viewModel.currentSelected as MaterialCardView
+              cv.setBackgroundColor(Color.parseColor("#EDE7F6"))
           }
         }
 
@@ -76,8 +79,11 @@ class VocableFragment : Fragment() {
 
             } else {
                 val tv = viewModel.currentSelectedArtikelTv as TextView
-                tv.text = "versuch noch mal!"
+                tv.text = "versuche es nochmal!"
                 tv.visibility = View.VISIBLE
+
+                val cv = viewModel.currentSelected as MaterialCardView
+                cv.setBackgroundColor(Color.parseColor("#EDE7F6"))
             }
         }
 
@@ -92,8 +98,12 @@ class VocableFragment : Fragment() {
 
             } else {
                 val tv = viewModel.currentSelectedArtikelTv as TextView
-                tv.text = "versuch noch mal!"
+                tv.text = "versuche es nochmal!"
                 tv.visibility = View.VISIBLE
+
+                val cv = viewModel.currentSelected as MaterialCardView
+                cv.setBackgroundColor(Color.parseColor("#EDE7F6"))
+
             }
         }
     }

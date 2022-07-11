@@ -23,6 +23,66 @@ class VerbRepository {
                 "befiehlt",
                 "befahl",
                 "hat befohlen"
+            ),
+            Verb(
+                "beginnen mit/Inf.",
+                "beginnt",
+                "begann",
+                "hat begonnen"
+            ),
+            Verb(
+                "denken an/über",
+                "denkt",
+                "dachte",
+                "hat gedacht"
+            ),
+            Verb(
+                "empfinden Akk",
+                "empfindet",
+                "empfand",
+                "hat empfunden"
+            ),
+            Verb(
+                "geschehen  Dat,Akk.",
+                "geschieht",
+                "geschah",
+                "ist geschehen"
+            ),
+            Verb(
+                "lesen Akk.",
+                "liest",
+                "las",
+                "hat gelesen"
+            ),
+            Verb(
+                "rennen",
+                "rennt",
+                "rannte",
+                "ist gerannt"
+            ),
+            Verb(
+                "schmelzen",
+                "schmilzt",
+                "schmolz",
+                "ist/hat geschmolzen"
+            ),
+            Verb(
+                "sprießen",
+                "sprießt",
+                "spross",
+                "ist gesprossen"
+            ),
+            Verb(
+                "tragen Akk.",
+                "trägt",
+                "trug",
+                "hat getragen"
+            ),
+            Verb(
+                "vergessen Dat,Akk/Inf.",
+                "vergisst",
+                "vergaß",
+                "hat vergessen"
             )
             )
 

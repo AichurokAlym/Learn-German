@@ -6,5 +6,6 @@ data class Quiz(
     val answerB: String,
     val answerC: String,
     val answerD: String,
-    val rightAnswer: Int
+    val rightAnswer: Int,
+    var clickedA: Boolean = false
 )
