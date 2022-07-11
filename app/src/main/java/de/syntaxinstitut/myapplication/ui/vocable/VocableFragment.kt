@@ -50,14 +50,17 @@ class VocableFragment : Fragment() {
         recyclerView.adapter = VocableAdapter(viewModel.vocableList, ::selectCallBack)
 
         binding.btDer.setOnClickListener {
-          if(viewModel.correctAnswer == "der") {
+          if(viewModel.correctArtikel == "der") {
               val tv = viewModel.currentSelectedArtikelTv as TextView
               tv.text = "der"
               tv.setTextColor(Color.parseColor("#FFFFFF"))
               tv.visibility = View.VISIBLE
 
+              val tvWord =
+
               val cv = viewModel.currentSelected as MaterialCardView
               cv.setBackgroundColor(Color.parseColor("#000000"))
+
           } else {
               val tv = viewModel.currentSelectedArtikelTv as TextView
               tv.text = "versuche es nochmal!"
@@ -69,7 +72,7 @@ class VocableFragment : Fragment() {
         }
 
         binding.btDie.setOnClickListener {
-            if (viewModel.correctAnswer == "die") {
+            if (viewModel.correctArtikel == "die") {
                 val tv = viewModel.currentSelectedArtikelTv as TextView
                 tv.text = "die"
                 tv.visibility = View.VISIBLE
@@ -88,7 +91,7 @@ class VocableFragment : Fragment() {
         }
 
         binding.btDas.setOnClickListener {
-            if (viewModel.correctAnswer == "das") {
+            if (viewModel.correctArtikel == "das") {
                 val tv = viewModel.currentSelectedArtikelTv as TextView
                 tv.text = "das"
                 tv.visibility = View.VISIBLE
@@ -108,8 +111,8 @@ class VocableFragment : Fragment() {
         }
     }
 
-    fun selectCallBack(view: View, cardView: View, correctAnswer: String) {
-        viewModel.setCurrentSelected(view,cardView, correctAnswer)
+    fun selectCallBack(view: View, cardView: View, correctArtikel: String, word: String ) {
+        viewModel.setCurrentSelected(view, cardView, correctArtikel, word )
 
     }
 

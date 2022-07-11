@@ -3,8 +3,6 @@ package de.syntaxinstitut.myapplication.ui.vocable
 import android.app.Application
 import android.view.View
 import androidx.lifecycle.AndroidViewModel
-import com.google.android.material.card.MaterialCardView
-import de.syntaxinstitut.myapplication.data.VerbRepository
 import de.syntaxinstitut.myapplication.data.VocableRepository
 
 /**
@@ -25,14 +23,17 @@ class VocableViewModel(application: Application) : AndroidViewModel(application)
     val currentSelected: View?
         get() = _currentSelected
 
-     private var _correctAnswer: String = ""
-    val correctAnswer: String
-    get() = _correctAnswer
+     private var _correctArtikel: String = ""
+    val correctArtikel: String
+    get() = _correctArtikel
 
-    fun setCurrentSelected(view: View, cardView: View, correctAnswer: String){
+    private  var _tvWord: String = ""
+
+
+    fun setCurrentSelected(view: View, cardView: View, correctArtikel: String, word: String){
         _currentSelectedArtikelTV = view
         _currentSelected = cardView
-        _correctAnswer = correctAnswer
+        _correctArtikel = correctArtikel
     }
 
 
