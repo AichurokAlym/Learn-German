@@ -17,7 +17,6 @@ class QuizAdapter(
 ) : RecyclerView.Adapter<QuizAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-       // val tvQuizTitle: TextView = itemView.findViewById(R.id.tvVocable)
         val tvQuestion: TextView = itemView.findViewById(R.id.tvTranslate)
         val answerA: AppCompatButton = itemView.findViewById(R.id.btAnswerA)
         val answerB: AppCompatButton = itemView.findViewById(R.id.btAnswerB)
@@ -61,18 +60,30 @@ class QuizAdapter(
 
         holder.answerA.setOnClickListener {
             checkedAnswer(quiz, 1, it as AppCompatButton)
+            holder.answerB.isClickable = false
+            holder.answerC.isClickable = false
+            holder.answerD.isClickable = false
         }
 
         holder.answerB.setOnClickListener {
             checkedAnswer(quiz, 2, it as AppCompatButton)
+            holder.answerA.isClickable = false
+            holder.answerC.isClickable = false
+            holder.answerD.isClickable = false
         }
 
         holder.answerC.setOnClickListener {
             checkedAnswer(quiz, 3, it as AppCompatButton)
+            holder.answerA.isClickable = false
+            holder.answerB.isClickable = false
+            holder.answerD.isClickable = false
         }
 
         holder.answerD.setOnClickListener {
            checkedAnswer(quiz, 4, it as AppCompatButton)
+            holder.answerA.isClickable = false
+            holder.answerB.isClickable = false
+            holder.answerC.isClickable = false
         }
     }
 

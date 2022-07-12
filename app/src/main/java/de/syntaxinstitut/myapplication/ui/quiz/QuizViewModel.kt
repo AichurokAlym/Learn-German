@@ -31,6 +31,15 @@ class QuizViewModel(application: Application) : AndroidViewModel(application) {
         get() = _lastAnswer
 
 
+    var _correctAnswer = 0
+    val correctAnswer: Int
+        get() = _correctAnswer
+
+    var _wrongAnswer = 0
+    val wrongAnswer: Int
+        get() = _wrongAnswer
+
+
 
     /**
      * Diese Funktion startet das Spiel neu, indem alle Variablen zurückgesetzt werden
@@ -47,10 +56,10 @@ class QuizViewModel(application: Application) : AndroidViewModel(application) {
     fun checkAnswer(quiz: Quiz, answerIndex: Int) {
         if (answerIndex == quiz.rightAnswer){
             _lastAnswer = true
+            _correctAnswer ++
             } else {
-                //questionIndex++
-               // _currentQuestion = questionsList[questionIndex]
                 _lastAnswer = false
+            _wrongAnswer ++
             }
 
     }

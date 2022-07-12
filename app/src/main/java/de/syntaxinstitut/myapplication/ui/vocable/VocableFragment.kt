@@ -51,67 +51,34 @@ class VocableFragment : Fragment() {
 
         binding.btDer.setOnClickListener {
           if(viewModel.correctArtikel == "der") {
-              val tv = viewModel.currentSelectedArtikelTv as TextView
-              tv.text = "der"
-              tv.setTextColor(Color.parseColor("#FFFFFF"))
-              tv.visibility = View.VISIBLE
-
-
-
-              val cv = viewModel.currentSelected as MaterialCardView
-              cv.setBackgroundColor(Color.parseColor("#000000"))
+              viewModel.changeColor("der", "#FFFFFF", "#000000" )
 
           } else {
-              val tv = viewModel.currentSelectedArtikelTv as TextView
-              tv.text = "versuche es nochmal!"
-              tv.visibility = View.VISIBLE
-
-              val cv = viewModel.currentSelected as MaterialCardView
-              cv.setBackgroundColor(Color.parseColor("#EDE7F6"))
+              viewModel.changeColor("versuche es nochmal!", "#000000", "#EDE7F6")
           }
         }
 
         binding.btDie.setOnClickListener {
             if (viewModel.correctArtikel == "die") {
-                val tv = viewModel.currentSelectedArtikelTv as TextView
-                tv.text = "die"
-                tv.visibility = View.VISIBLE
-
-                val cv = viewModel.currentSelected as MaterialCardView
-                cv.setBackgroundColor(Color.parseColor("#F43535"))
+                viewModel.changeColor("die", "#000000", "#F43535")
 
             } else {
-                val tv = viewModel.currentSelectedArtikelTv as TextView
-                tv.text = "versuche es nochmal!"
-                tv.visibility = View.VISIBLE
-
-                val cv = viewModel.currentSelected as MaterialCardView
-                cv.setBackgroundColor(Color.parseColor("#EDE7F6"))
+                viewModel.changeColor("versuche es nochmal!", "#000000", "#EDE7F6")
             }
         }
 
         binding.btDas.setOnClickListener {
             if (viewModel.correctArtikel == "das") {
-                val tv = viewModel.currentSelectedArtikelTv as TextView
-                tv.text = "das"
-                tv.visibility = View.VISIBLE
-
-                val cv = viewModel.currentSelected as MaterialCardView
-                cv.setBackgroundColor(Color.parseColor("#E8E04F"))
+                viewModel.changeColor("das", "#000000", "#E8E04F")
 
             } else {
-                val tv = viewModel.currentSelectedArtikelTv as TextView
-                tv.text = "versuche es nochmal!"
-                tv.visibility = View.VISIBLE
-
-                val cv = viewModel.currentSelected as MaterialCardView
-                cv.setBackgroundColor(Color.parseColor("#EDE7F6"))
+                viewModel.changeColor("versuche es nochmal!", "#000000", "#EDE7F6")
 
             }
         }
     }
 
-    fun selectCallBack(view: View, cardView: View, correctArtikel: String, word: String ) {
+    fun selectCallBack(view: View, cardView: View, correctArtikel: String, word: View) {
         viewModel.setCurrentSelected(view, cardView, correctArtikel, word )
 
     }

@@ -1,5 +1,6 @@
 package de.syntaxinstitut.myapplication.ui.vocable
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +14,7 @@ import de.syntaxinstitut.myapplication.data.model.Vocable
 
 class VocableAdapter(
     private val dataset: List<Vocable>,
-    private val selectCallBack: (View,View,String, String) -> Unit
+    private val selectCallBack: (View,View,String, View) -> Unit
 ) : RecyclerView.Adapter<VocableAdapter.ItemViewHolder>() {
 
 
@@ -64,7 +65,7 @@ class VocableAdapter(
         }
 
         holder.radioButton.setOnClickListener {
-            selectCallBack(holder.tvArtikel, holder.cvCardView, vocable.artikel, vocable.word)
+            selectCallBack(holder.tvArtikel, holder.cvCardView, vocable.artikel, holder.tvWord)
         }
 
 
