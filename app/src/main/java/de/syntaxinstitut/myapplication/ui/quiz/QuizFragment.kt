@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.myapplication.R
 import de.syntaxinstitut.myapplication.data.model.Quiz
 import de.syntaxinstitut.myapplication.databinding.FragmentQuizBinding
@@ -43,6 +44,10 @@ import de.syntaxinstitut.myapplication.databinding.FragmentQuizBinding
 
         // verbesserte Performance bei fixer Größe
         recyclerView.setHasFixedSize(true)
+
+        binding.btResult.setOnClickListener {
+            findNavController().navigate(QuizFragmentDirections.actionQuizFragmentToMyQuiz())
+        }
     }
 
      fun checkAnswerUpdateUI(quiz: Quiz, answerIndex: Int) : Boolean {

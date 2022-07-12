@@ -64,6 +64,11 @@ class HomeFragment : Fragment() {
 
         binding.btVerb.setOnClickListener {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToVerbFragment())
+
+        }
+
+        binding.btMyQuestions.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToMyQuiz())
         }
 
         binding.btQuiz.setOnClickListener {
