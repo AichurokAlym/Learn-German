@@ -95,6 +95,6 @@
     </fragment>
     <fragment
         android:id="@+id/myQuiz"
-        android:name="de.syntaxinstitut.myapplication.ui.quiz.MyQuiz"
+        android:name="de.syntaxinstitut.myapplication.ui.quiz.QuizErgebnis"
         android:label="MyQuiz" />
 </navigation>

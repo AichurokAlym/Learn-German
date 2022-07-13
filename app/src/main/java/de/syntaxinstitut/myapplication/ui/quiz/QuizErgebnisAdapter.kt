@@ -10,11 +10,12 @@ import androidx.recyclerview.widget.RecyclerView
 import de.syntaxinstitut.myapplication.R
 import de.syntaxinstitut.myapplication.data.model.Quiz
 
-class QuizAdapter(
+class QuizErgebnisAdapter(
     private val context: Context,
     private val dataset: List<Quiz>,
-    private val checkAnswerUpdateUI: (Quiz, Int) -> Boolean
-) : RecyclerView.Adapter<QuizAdapter.ItemViewHolder>() {
+    private val checkAnswerUpdateUI: (Quiz, Int) ->Boolean
+
+) : RecyclerView.Adapter<QuizErgebnisAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvQuestion: TextView = itemView.findViewById(R.id.tvTranslate)
@@ -25,9 +26,6 @@ class QuizAdapter(
 
     }
 
-    /**
-     * hier werden neue ViewHolder erstellt
-     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val itemLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_item_quiz, parent, false)
@@ -35,10 +33,6 @@ class QuizAdapter(
         return ItemViewHolder(itemLayout)
     }
 
-    /**
-     * hier findet der Recyclingprozess statt
-     * die vom ViewHolder bereitgestellten Parameter erhalten die Information des Listeneintrags
-     */
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
 
         // Hole den Kontakt aus dem dataset
@@ -50,45 +44,13 @@ class QuizAdapter(
         holder.answerC.text = quiz.answerC
         holder.answerD.text = quiz.answerD
 
-        if (!quiz.clicked) {
-            holder.answerA.foreground = context.getDrawable(R.drawable.answer_cards_style)
-            holder.answerB.foreground = context.getDrawable(R.drawable.answer_cards_style)
-            holder.answerC.foreground = context.getDrawable(R.drawable.answer_cards_style)
-            holder.answerD.foreground = context.getDrawable(R.drawable.answer_cards_style)
-        }
+        //checkedAnswer()
 
+        holder.answerA.isClickable = false
+        holder.answerB.isClickable = false
+        holder.answerC.isClickable = false
+        holder.answerD.isClickable = false
 
-        holder.answerA.setOnClickListener {
-            checkedAnswer(quiz, 1, it as AppCompatButton)
-            holder.answerB.isClickable = false
-            holder.answerC.isClickable = false
-            holder.answerD.isClickable = false
-            //geklickte Antworten speichern
-        }
-
-        holder.answerB.setOnClickListener {
-            checkedAnswer(quiz, 2, it as AppCompatButton)
-            holder.answerA.isClickable = false
-            holder.answerC.isClickable = false
-            holder.answerD.isClickable = false
-            //geklickte Antworten speichern
-        }
-
-        holder.answerC.setOnClickListener {
-            checkedAnswer(quiz, 3, it as AppCompatButton)
-            holder.answerA.isClickable = false
-            holder.answerB.isClickable = false
-            holder.answerD.isClickable = false
-            //geklickte Antworten speichern
-        }
-
-        holder.answerD.setOnClickListener {
-           checkedAnswer(quiz, 4, it as AppCompatButton)
-            holder.answerA.isClickable = false
-            holder.answerB.isClickable = false
-            holder.answerC.isClickable = false
-            //geklickte Antworten speichern
-        }
     }
 
     fun checkedAnswer (quiz: Quiz, int: Int, button: AppCompatButton) {
@@ -102,9 +64,6 @@ class QuizAdapter(
     }
 
     override fun getItemCount(): Int {
-       return dataset.size
+        return dataset.size
     }
-
-
-
 }

@@ -11,7 +11,7 @@ import de.syntaxinstitut.myapplication.databinding.FragmentMyQuizBinding
 import de.syntaxinstitut.myapplication.databinding.FragmentMyVocableBoxBinding
 import de.syntaxinstitut.myapplication.ui.vocable.VocableViewModel
 
-class MyQuiz : Fragment() {
+class QuizErgebnis : Fragment() {
 
     // Hier wird das ViewModel geholt
     private val viewModel: QuizViewModel by activityViewModels()
@@ -36,10 +36,13 @@ class MyQuiz : Fragment() {
         myQuizRV.adapter = QuizAdapter(requireContext(), viewModel.questionsList, ::checkAnswerUpdateUi)
         myQuizRV.setHasFixedSize(true)
 
+        binding.tvCorrectAnswer.text = viewModel.correctAnswer.toString()
+
     }
 
     fun checkAnswerUpdateUi(quiz: Quiz, rightAnswer: Int) : Boolean {
         viewModel.checkAnswer(quiz, rightAnswer)
+
 
         if (viewModel.lastAnswer == true) {
             return true
