@@ -33,7 +33,7 @@ class QuizErgebnis : Fragment() {
 
         val myQuizRV = binding.recyclerView
 
-        myQuizRV.adapter = QuizAdapter(requireContext(), viewModel.questionsList, ::checkAnswerUpdateUi)
+        myQuizRV.adapter = QuizErgebnisAdapter(requireContext(), viewModel.questionsList, ::checkAnswerUpdateUi)
         myQuizRV.setHasFixedSize(true)
 
         binding.tvCorrectAnswer.text = viewModel.correctAnswer.toString()

@@ -1,6 +1,7 @@
 package de.syntaxinstitut.myapplication.ui.quiz
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -44,6 +45,8 @@ class QuizErgebnisAdapter(
         holder.answerC.text = quiz.answerC
         holder.answerD.text = quiz.answerD
 
+
+
         //checkedAnswer()
 
         holder.answerA.isClickable = false
@@ -51,16 +54,34 @@ class QuizErgebnisAdapter(
         holder.answerC.isClickable = false
         holder.answerD.isClickable = false
 
-    }
+        when (quiz.rightAnswer) {
+            1 -> {
+                holder.answerA.foreground =context.getDrawable(R.drawable.answer_cards_correct)
+                holder.answerB.foreground =context.getDrawable(R.drawable.answer_cards_style)
+                holder.answerC.foreground =context.getDrawable(R.drawable.answer_cards_style)
+                holder.answerD.foreground =context.getDrawable(R.drawable.answer_cards_style)
+            }
+            2 -> {
+                holder.answerB.foreground =context.getDrawable(R.drawable.answer_cards_correct)
+                holder.answerA.foreground =context.getDrawable(R.drawable.answer_cards_style)
+                holder.answerC.foreground =context.getDrawable(R.drawable.answer_cards_style)
+                holder.answerD.foreground =context.getDrawable(R.drawable.answer_cards_style)
+            }
 
-    fun checkedAnswer (quiz: Quiz, int: Int, button: AppCompatButton) {
-        val success = checkAnswerUpdateUI(quiz, int)
-        if (success == true) {
-            button.foreground = context.getDrawable(R.drawable.answer_cards_correct)
-            quiz.clicked = true
-        } else {
-            button.foreground = context.getDrawable(R.drawable.answer_cards_wrong)
+            3 -> {
+                holder.answerC.foreground =context.getDrawable(R.drawable.answer_cards_correct)
+                holder.answerA.foreground =context.getDrawable(R.drawable.answer_cards_style)
+                holder.answerB.foreground =context.getDrawable(R.drawable.answer_cards_style)
+                holder.answerD.foreground =context.getDrawable(R.drawable.answer_cards_style)
+            }
+            4 -> {
+                holder.answerD.foreground =context.getDrawable(R.drawable.answer_cards_correct)
+                holder.answerA.foreground =context.getDrawable(R.drawable.answer_cards_style)
+                holder.answerC.foreground =context.getDrawable(R.drawable.answer_cards_style)
+                holder.answerB.foreground =context.getDrawable(R.drawable.answer_cards_style)
+            }
         }
+
     }
 
     override fun getItemCount(): Int {
