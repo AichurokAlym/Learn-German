@@ -4,12 +4,13 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import de.syntaxinstitut.myapplication.data.model.MyVocable
 import de.syntaxinstitut.myapplication.data.model.Quiz
 
-@Database(entities = [Quiz::class], version = 1)
+@Database(entities = [MyVocable::class], version = 1)
 abstract class MyVocableDatabase : RoomDatabase(){
 
-    abstract val quizDatabaseDao: MyVocableDatabaseDao
+    abstract val myVocableDatabaseDao: MyVocableDatabaseDao
 
 }
 private lateinit var INSTANCE: MyVocableDatabase

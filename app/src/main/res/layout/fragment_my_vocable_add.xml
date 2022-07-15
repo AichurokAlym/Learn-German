@@ -10,7 +10,7 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/outerCardView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_margin="4dp"
         android:elevation="30dp"
         app:cardBackgroundColor="#FFFFFF"
@@ -18,17 +18,18 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/materialCardView"
                 android:layout_width="380dp"
                 android:layout_height="140dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginBottom="100dp"
                 android:elevation="30dp"
                 app:cardBackgroundColor="#EDE7F6"
                 app:cardCornerRadius="25dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.546"
                 app:layout_constraintStart_toStartOf="parent"
@@ -38,47 +39,33 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-
-                    <TextView
-                        android:id="@+id/tvMyVocableBox"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/addNewWord"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Word"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        android:textStyle="bold"
-                        android:visibility="visible"
+                        android:hint="Vokabel"
+                        android:inputType="textPersonName"
+                        android:textSize="30sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.501"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.301" />
+                        app:layout_constraintVertical_bias="0.215" />
 
-                    <TextView
-                        android:id="@+id/tvMyTranslate"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/addTranslate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Translate"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        android:textStyle="bold|italic"
-                        android:visibility="visible"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginTop="61dp"
+                        android:hint="Übersetzung"
+                        android:inputType="textPersonName"
+                        android:textSize="30sp"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.502"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.935" />
+                        app:layout_constraintTop_toTopOf="@+id/addNewWord" />
 
-                    <ImageButton
-                        android:id="@+id/btEdit"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginBottom="8dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:srcCompat="@android:drawable/ic_menu_edit" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -108,6 +95,28 @@
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.351"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
+
+            <Button
+                android:id="@+id/btSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="80dp"
+                android:text="save"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
+
+            <Button
+                android:id="@+id/btCancel"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="cancel"
+                app:layout_constraintEnd_toStartOf="@+id/btSave"
+                app:layout_constraintHorizontal_bias="0.555"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
 

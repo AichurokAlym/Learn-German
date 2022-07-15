@@ -71,6 +71,10 @@ class HomeFragment : Fragment() {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToMyQuiz())
         }
 
+        binding.btMyVocableBox.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToMyVocableBox())
+        }
+
         binding.btQuiz.setOnClickListener {
             val menuitem = (activity as MainActivity).binding.bottomNavigation.menu.get(2)
             NavigationUI.onNavDestinationSelected(menuitem, findNavController())

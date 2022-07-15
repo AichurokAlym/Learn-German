@@ -103,5 +103,28 @@
     <fragment
         android:id="@+id/myVocableBox"
         android:name="de.syntaxinstitut.myapplication.ui.vocable.myVocableBox.MyVocableBox"
-        android:label="MyVocableBox" />
+        android:label="MyVocableBox" >
+        <action
+            android:id="@+id/action_myVocableBox_to_myVocableAdd"
+            app:destination="@id/myVocableAdd" />
+        <action
+            android:id="@+id/action_myVocableBox_to_myVocableEdit"
+            app:destination="@id/myVocableEdit" />
+    </fragment>
+    <fragment
+        android:id="@+id/myVocableAdd"
+        android:name="de.syntaxinstitut.myapplication.ui.vocable.myVocableBox.MyVocableAdd"
+        android:label="MyVocableAdd" >
+        <action
+            android:id="@+id/action_myVocableAdd_to_myVocableBox"
+            app:destination="@id/myVocableBox" />
+    </fragment>
+    <fragment
+        android:id="@+id/myVocableEdit"
+        android:name="de.syntaxinstitut.myapplication.ui.vocable.myVocableBox.MyVocableEdit"
+        android:label="MyVocableEdit" >
+        <action
+            android:id="@+id/action_myVocableEdit_to_myVocableBox"
+            app:destination="@id/myVocableBox" />
+    </fragment>
 </navigation>

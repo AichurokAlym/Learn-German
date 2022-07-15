@@ -62,8 +62,5 @@ class VocableViewModel(application: Application) : AndroidViewModel(application)
             Log.e ("AAA", e.toString())
         }
 
-
     }
-
-
 }

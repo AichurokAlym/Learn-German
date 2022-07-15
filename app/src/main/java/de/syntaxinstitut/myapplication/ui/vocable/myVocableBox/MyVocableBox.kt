@@ -6,22 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.myapplication.R
 import de.syntaxinstitut.myapplication.databinding.FragmentMyVocableBoxBinding
-import de.syntaxinstitut.myapplication.ui.vocable.VocableViewModel
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MyVocableBox.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MyVocableBox : Fragment() {
 
     private lateinit var binding: FragmentMyVocableBoxBinding
 
-    private val viewModel: VocableViewModel by viewModels()
+    private val viewModel: MyVocableBoxViewModel by activityViewModels()
 
 
     override fun onCreateView(
@@ -40,7 +36,18 @@ class MyVocableBox : Fragment() {
 
         val myVocableRV = binding.recyclerView
 
-        myVocableRV.adapter = MyVocableBoxAdapter()
+       // myVocableRV.adapter = MyVocableBoxAdapter()
+        viewModel.vocableList.observe(
+            viewLifecycleOwner,
+            Observer {
+                myVocableRV.adapter = MyVocableBoxAdapter(it)
+            }
+        )
+
+        binding.btAddVT.setOnClickListener{
+            findNavController().navigate(MyVocableBoxDirections.actionMyVocableBoxToMyVocableAdd())
+
+        }
     }
 
 }
