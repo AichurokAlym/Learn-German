@@ -48,6 +48,9 @@
         <action
             android:id="@+id/action_homeFragment_to_myQuiz"
             app:destination="@id/myQuiz" />
+        <action
+            android:id="@+id/action_homeFragment_to_myVocableBox"
+            app:destination="@id/myVocableBox" />
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
@@ -97,4 +100,8 @@
         android:id="@+id/myQuiz"
         android:name="de.syntaxinstitut.myapplication.ui.quiz.QuizErgebnis"
         android:label="MyQuiz" />
+    <fragment
+        android:id="@+id/myVocableBox"
+        android:name="de.syntaxinstitut.myapplication.ui.vocable.myVocableBox.MyVocableBox"
+        android:label="MyVocableBox" />
 </navigation>

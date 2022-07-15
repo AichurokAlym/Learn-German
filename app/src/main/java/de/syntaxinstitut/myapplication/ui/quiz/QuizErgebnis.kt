@@ -8,8 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import de.syntaxinstitut.myapplication.data.model.Quiz
 import de.syntaxinstitut.myapplication.databinding.FragmentMyQuizBinding
-import de.syntaxinstitut.myapplication.databinding.FragmentMyVocableBoxBinding
-import de.syntaxinstitut.myapplication.ui.vocable.VocableViewModel
 
 class QuizErgebnis : Fragment() {
 

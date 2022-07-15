@@ -7,20 +7,20 @@ import androidx.room.RoomDatabase
 import de.syntaxinstitut.myapplication.data.model.Quiz
 
 @Database(entities = [Quiz::class], version = 1)
-abstract class QuizDatabase : RoomDatabase(){
+abstract class MyVocableDatabase : RoomDatabase(){
 
-    abstract val quizDatabaseDao: QuizDatabaseDao
+    abstract val quizDatabaseDao: MyVocableDatabaseDao
 
 }
-private lateinit var INSTANCE: QuizDatabase
+private lateinit var INSTANCE: MyVocableDatabase
 
-fun getDatabase(context: Context): QuizDatabase {
-    synchronized(QuizDatabase::class.java) {
+fun getDatabase(context: Context): MyVocableDatabase {
+    synchronized(MyVocableDatabase::class.java) {
         if (!::INSTANCE.isInitialized) {
             INSTANCE = Room.databaseBuilder(
                 context.applicationContext,
-                QuizDatabase::class.java,
-                "quiz_database"
+                MyVocableDatabase::class.java,
+                "my_vocable_database"
             )
                 .build()
         }
