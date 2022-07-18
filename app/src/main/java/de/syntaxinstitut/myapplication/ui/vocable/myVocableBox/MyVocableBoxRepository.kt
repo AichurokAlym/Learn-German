@@ -21,7 +21,7 @@ class MyVocableBoxRepository(private val database: MyVocableDatabase) {
 
     suspend fun update(myVocable: MyVocable) {
         try {
-            database.myVocableDatabaseDao.insert(myVocable)
+            database.myVocableDatabaseDao.update(myVocable)
         } catch (e: Exception) {
             Log.e(TAG, "Failed to update Database: $e")
         }
@@ -29,7 +29,7 @@ class MyVocableBoxRepository(private val database: MyVocableDatabase) {
 
     suspend fun delete(myVocable: MyVocable){
         try {
-            database.myVocableDatabaseDao.insert(myVocable)
+            database.myVocableDatabaseDao.deleteById(myVocable.id)
         } catch (e: Exception) {
             Log.e(TAG, "Failed to delete from Database: $e")
         }
