@@ -20,6 +20,10 @@ class MyVocableBoxViewModel(application: Application) : AndroidViewModel(applica
     val complete: LiveData<Boolean>
         get() = _complete
 
+    private val _selectedVocable = MutableLiveData<MyVocable>()
+    val selectedVocable: LiveData<MyVocable>
+        get() = _selectedVocable
+
     fun insertVocable(myVocable: MyVocable) {
         viewModelScope.launch {
             myVRepository.insert(myVocable)
@@ -43,5 +47,9 @@ class MyVocableBoxViewModel(application: Application) : AndroidViewModel(applica
 
     fun unsertComplete() {
         _complete.value = false
+    }
+
+    fun currentSelected(item: MyVocable) {
+        _selectedVocable.value = item
     }
 }

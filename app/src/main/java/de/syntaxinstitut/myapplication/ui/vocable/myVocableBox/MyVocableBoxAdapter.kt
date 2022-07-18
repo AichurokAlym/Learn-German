@@ -5,25 +5,22 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatImageButton
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import de.syntaxinstitut.myapplication.R
 import de.syntaxinstitut.myapplication.data.model.MyVocable
 
 class MyVocableBoxAdapter(
-    private val dataset: List<MyVocable>
+    private val dataset: List<MyVocable>,
+    private val currentSelected: (MyVocable) -> Unit
 ) : RecyclerView.Adapter<MyVocableBoxAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         val tvMyVocableBox: TextView = itemView.findViewById(R.id.tvMyVocableBox)
         val tvMyTranslate: TextView = itemView.findViewById(R.id.tvMyTranslate)
-        val btEdit: Button = itemView.findViewById(R.id.btEdit)
-
-        val addNewWord: TextView = itemView.findViewById(R.id.addNewWord)
-        val addTranslate: TextView = itemView.findViewById(R.id.addTranslate)
-       // val btSave: Button = itemView.findViewById(R.id.btSave)
-
-
+        val btEdit: AppCompatImageButton = itemView.findViewById(R.id.btEdit)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -39,6 +36,7 @@ class MyVocableBoxAdapter(
         holder.tvMyTranslate.text = item.newWordsTranslate
 
         holder.btEdit.setOnClickListener {
+            currentSelected(item)
             holder.view.findNavController().navigate(MyVocableBoxDirections.actionMyVocableBoxToMyVocableEdit())
         }
 

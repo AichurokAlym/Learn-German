@@ -10,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.myapplication.R
+import de.syntaxinstitut.myapplication.data.model.MyVocable
 import de.syntaxinstitut.myapplication.databinding.FragmentMyVocableBoxBinding
 
 
@@ -40,7 +41,8 @@ class MyVocableBox : Fragment() {
         viewModel.vocableList.observe(
             viewLifecycleOwner,
             Observer {
-                myVocableRV.adapter = MyVocableBoxAdapter(it)
+                myVocableRV.adapter = MyVocableBoxAdapter(it, ::currentSelectedItem)
+
             }
         )
 
@@ -48,6 +50,10 @@ class MyVocableBox : Fragment() {
             findNavController().navigate(MyVocableBoxDirections.actionMyVocableBoxToMyVocableAdd())
 
         }
+    }
+
+    fun currentSelectedItem(item: MyVocable) {
+        viewModel.currentSelected(item)
     }
 
 }

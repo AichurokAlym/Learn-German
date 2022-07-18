@@ -41,7 +41,7 @@ class MyVocableEdit : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val vocable = viewModel.vocableList.value?.find { it.id == id }
+        val vocable = viewModel.selectedVocable.value
 
         if (vocable != null) {
             binding.editNewWord.setText(vocable.newWord)
@@ -60,7 +60,7 @@ class MyVocableEdit : Fragment() {
                 getValuesAndUpdate(vocable)
             }
         }
-        binding.editNewWord.setOnClickListener {
+        binding.btDelete.setOnClickListener {
             if (vocable != null) {
                 viewModel.deleteVocable(vocable)
             }
