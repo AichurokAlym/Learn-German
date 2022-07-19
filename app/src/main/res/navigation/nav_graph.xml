@@ -40,9 +40,6 @@
             android:id="@+id/action_menuFragment_to_quizFragment"
             app:destination="@id/quizFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_my_account"
-            app:destination="@id/my_account" />
-        <action
             android:id="@+id/action_homeFragment_to_verbFragment"
             app:destination="@id/verbFragment" />
         <action
@@ -51,6 +48,12 @@
         <action
             android:id="@+id/action_homeFragment_to_myVocableBox"
             app:destination="@id/myVocableBox" />
+        <action
+            android:id="@+id/action_homeFragment_to_adjektiveFragment"
+            app:destination="@id/adjektiveFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_myAccount2"
+            app:destination="@id/myAccount" />
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
@@ -73,20 +76,6 @@
         <action
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/my_account"
-        android:name="de.syntaxinstitut.myapplication.my_account"
-        android:label="my_account" >
-        <action
-            android:id="@+id/action_my_account_to_quizFragment"
-            app:destination="@id/quizFragment" />
-        <action
-            android:id="@+id/action_my_account_to_vocableFragment"
-            app:destination="@id/vocableFragment" />
-        <action
-            android:id="@+id/action_my_account_to_myQuiz"
-            app:destination="@id/myQuiz" />
     </fragment>
     <fragment
         android:id="@+id/verbFragment"
@@ -126,5 +115,20 @@
         <action
             android:id="@+id/action_myVocableEdit_to_myVocableBox"
             app:destination="@id/myVocableBox" />
+    </fragment>
+    <fragment
+        android:id="@+id/adjektiveFragment"
+        android:name="de.syntaxinstitut.myapplication.ui.vocable.adjektive.AdjektiveFragment"
+        android:label="AdjektiveFragment" />
+    <fragment
+        android:id="@+id/myAccount"
+        android:name="de.syntaxinstitut.myapplication.MyAccount"
+        android:label="MyAccount" >
+        <action
+            android:id="@+id/action_myAccount2_to_myVocableBox"
+            app:destination="@id/myVocableBox" />
+        <action
+            android:id="@+id/action_myAccount2_to_myQuiz"
+            app:destination="@id/myQuiz" />
     </fragment>
 </navigation>

@@ -8,6 +8,18 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
+                  <entry key="adjektiveFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="775" />
+                            <option name="y" value="-115" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="homeFragment">
                     <value>
                       <LayoutPositions>
@@ -19,17 +31,17 @@
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_homeFragment_to_adjektiveFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_homeFragment_to_myQuiz">
                               <value>
                                 <LayoutPositions />
                               </value>
                             </entry>
                             <entry key="action_homeFragment_to_myVocableBox">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                            <entry key="action_homeFragment_to_my_account">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -50,6 +62,18 @@
                               </value>
                             </entry>
                           </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="myAccount2">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="434" />
+                            <option name="y" value="732" />
+                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -75,6 +99,15 @@
                             <option name="y" value="486" />
                           </Point>
                         </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_myVocableAdd_to_myVocableBox">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
                       </LayoutPositions>
                     </value>
                   </entry>
@@ -94,6 +127,11 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="action_myVocableBox_to_myVocableEdit">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                           </map>
                         </option>
                       </LayoutPositions>
@@ -108,31 +146,9 @@
                             <option name="y" value="-28" />
                           </Point>
                         </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
-                  <entry key="my_account">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="410" />
-                            <option name="y" value="897" />
-                          </Point>
-                        </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_my_account_to_myQuiz">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                            <entry key="action_my_account_to_quizFragment">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                            <entry key="action_my_account_to_vocableFragment">
+                            <entry key="action_myVocableEdit_to_myVocableBox">
                               <value>
                                 <LayoutPositions />
                               </value>

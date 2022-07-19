@@ -29,7 +29,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tvArtikel"
+                android:id="@+id/tvName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Name und Vorname"
@@ -37,35 +37,40 @@
                 android:textSize="30sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageButton3" />
 
             <TextView
-                android:id="@+id/tvTranslate"
+                android:id="@+id/tvMail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
                 android:text="Email adresse"
                 android:textColor="@color/black"
                 android:textSize="30sp"
                 android:textStyle="italic"
-                app:layout_constraintEnd_toEndOf="@+id/tvArtikel"
-                app:layout_constraintStart_toStartOf="@+id/tvArtikel"
-                app:layout_constraintTop_toBottomOf="@+id/tvArtikel" />
+                app:layout_constraintEnd_toEndOf="@+id/tvName"
+                app:layout_constraintStart_toStartOf="@+id/tvName"
+                app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/materialCardView1"
+                android:id="@+id/mcv_my_vocable_box"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="24dp"
+                android:layout_marginBottom="32dp"
                 android:elevation="30dp"
                 app:cardBackgroundColor="#EDE7F6"
                 app:cardCornerRadius="25dp"
+                app:layout_constraintBottom_toTopOf="@+id/mcv_quiz"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.546"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvTranslate">
+                app:layout_constraintTop_toBottomOf="@+id/tvMail">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -91,12 +96,12 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/materialCardView"
+                android:id="@+id/mcv_quiz"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
-                android:layout_marginBottom="100dp"
+                android:layout_marginBottom="40dp"
                 android:elevation="30dp"
                 app:cardBackgroundColor="#EDE7F6"
                 app:cardCornerRadius="25dp"

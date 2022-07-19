@@ -8,7 +8,9 @@
         <entry key="app/src/main/res/drawable-v24/buttonshape.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/answer_cards_correct.xml" value="0.1095" />
         <entry key="app/src/main/res/drawable/answer_cards_style.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_round_cloud_off_24.xml" value="0.1575" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/fragment_adjektive.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2453125" />
         <entry key="app/src/main/res/layout/fragment_my_account.xml" value="0.28600769042968754" />
         <entry key="app/src/main/res/layout/fragment_my_quiz.xml" value="0.28390960693359374" />
@@ -19,6 +21,7 @@
         <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.27726530852141207" />
         <entry key="app/src/main/res/layout/fragment_verb.xml" value="0.21777801513671877" />
         <entry key="app/src/main/res/layout/fragment_vocable.xml" value="0.22491149902343752" />
+        <entry key="app/src/main/res/layout/list_item_adjektive.xml" value="0.24635416666666668" />
         <entry key="app/src/main/res/layout/list_item_my_vocable.xml" value="0.37024180094401027" />
         <entry key="app/src/main/res/layout/list_item_quiz.xml" value="0.3467048710601719" />
         <entry key="app/src/main/res/layout/list_item_quiz_ergebnis.xml" value="0.1175925925925926" />
