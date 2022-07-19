@@ -18,7 +18,7 @@ class AdjektiveAdapter(
 
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val imgView = view.findViewById<ImageView>(R.id.list_image)
-        //val tvAdjektive = view.findViewById<TextView>(R.id.tvAdjektive)
+        val tvAdjektive = view.findViewById<TextView>(R.id.tvAdjektive)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -38,6 +38,8 @@ class AdjektiveAdapter(
             error(R.drawable.ic_round_cloud_off_24)
             transformations(RoundedCornersTransformation(10f))
         }
+
+        holder.tvAdjektive.text = item.adjektiv
     }
 
     override fun getItemCount(): Int {
