@@ -2,6 +2,8 @@ package de.syntaxinstitut.myapplication.ui.quiz
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import de.syntaxinstitut.myapplication.data.QuizRepository
 import de.syntaxinstitut.myapplication.data.model.Quiz
 
@@ -31,8 +33,8 @@ class QuizViewModel(application: Application) : AndroidViewModel(application) {
         get() = _lastAnswer
 
 
-    var _correctAnswer = 0
-    val correctAnswer: Int
+    private var _correctAnswer = MutableLiveData<Int>(0)
+    val correctAnswer: LiveData<Int>
         get() = _correctAnswer
 
     var _wrongAnswer = 0
@@ -56,7 +58,7 @@ class QuizViewModel(application: Application) : AndroidViewModel(application) {
     fun checkAnswer(quiz: Quiz, answerIndex: Int) {
         if (answerIndex == quiz.rightAnswer){
             _lastAnswer = true
-            _correctAnswer ++
+            _correctAnswer.value = _correctAnswer.value!!+1
             } else {
                 _lastAnswer = false
             _wrongAnswer ++
