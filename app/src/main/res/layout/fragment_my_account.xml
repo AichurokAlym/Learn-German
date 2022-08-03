@@ -41,34 +41,20 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageButton3" />
 
-            <TextView
-                android:id="@+id/tvMail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:gravity="center"
-                android:text="Email adresse"
-                android:textColor="@color/black"
-                android:textSize="30sp"
-                android:textStyle="italic"
-                app:layout_constraintEnd_toEndOf="@+id/tvName"
-                app:layout_constraintStart_toStartOf="@+id/tvName"
-                app:layout_constraintTop_toBottomOf="@+id/tvName" />
-
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/mcv_my_vocable_box"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="24dp"
-                android:layout_marginBottom="24dp"
                 android:elevation="30dp"
                 app:cardBackgroundColor="#EDE7F6"
                 app:cardCornerRadius="25dp"
-                app:layout_constraintBottom_toTopOf="@+id/mcv_quiz"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.546"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvName">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -98,15 +84,15 @@
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="24dp"
-                android:layout_marginBottom="32dp"
                 android:elevation="30dp"
                 app:cardBackgroundColor="#EDE7F6"
                 app:cardCornerRadius="25dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.546"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mcv_my_vocable_box">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -131,18 +117,19 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btLogout"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginEnd="16dp"
+                android:backgroundTint="#1976D2"
                 android:text=" log out"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvMail" />
+                app:layout_constraintTop_toBottomOf="@+id/mcv_quiz" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>

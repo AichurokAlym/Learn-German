@@ -43,7 +43,7 @@ class MyAccount: Fragment() {
                     findNavController().navigate(R.id.signInFragment)
                 } else {
                     userMail = it.email.toString()
-                    binding.tvMail.text = "$userMail"
+                    binding.tvName.text = "$userMail"
                 }
             }
         )

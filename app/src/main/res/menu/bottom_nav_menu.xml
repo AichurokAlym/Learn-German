@@ -26,9 +26,9 @@
         android:menuCategory="secondary"/>
     <item
         android:id="@+id/translationFragment"
-        android:icon="@android:drawable/ic_menu_search"
-        android:title="Search"
-        app:actionViewClass="android.widget.SearchView"
-        android:menuCategory="secondary"/>
+        android:icon="@drawable/translation"
+        android:menuCategory="secondary"
+        android:title="Translator"
+        app:actionViewClass="android.widget.SearchView" />
 
 </menu>
