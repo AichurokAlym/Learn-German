@@ -51,3 +51,5 @@ class MainViewModel(application: Application) : AndroidViewModel(application){
         _currentUser.value = firebaseAuth.currentUser
     }
 }
+
+

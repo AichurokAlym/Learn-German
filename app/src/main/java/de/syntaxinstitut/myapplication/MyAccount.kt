@@ -43,7 +43,7 @@ class MyAccount: Fragment() {
                     findNavController().navigate(R.id.signInFragment)
                 } else {
                     userMail = it.email.toString()
-                    binding.tvMail.text = "Hallo $userMail! Schön das du da bist!:)"
+                    binding.tvMail.text = "$userMail"
                 }
             }
         )
@@ -55,7 +55,10 @@ class MyAccount: Fragment() {
         binding.mcvQuiz.setOnClickListener {
             findNavController().navigate(MyAccountDirections.actionMyAccount2ToMyQuiz())
         }
+
+        binding.btLogout.setOnClickListener {
+            viewModel.logout()
+        }
+
     }
-
-
 }

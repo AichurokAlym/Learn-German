@@ -131,4 +131,8 @@
             android:id="@+id/action_myAccount2_to_myQuiz"
             app:destination="@id/myQuiz" />
     </fragment>
+    <fragment
+        android:id="@+id/translationFragment"
+        android:name="de.syntaxinstitut.myapplication.TranslationFragment"
+        android:label="TranslationFragment" />
 </navigation>
