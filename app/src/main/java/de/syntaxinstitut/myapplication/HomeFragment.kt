@@ -49,7 +49,7 @@ class HomeFragment : Fragment() {
                     findNavController().navigate(R.id.signInFragment)
                 } else {
                     userMail = it.email.toString()
-                    binding.tvVocableLearn.text = "Hallo $userMail! Schön das du da bist!:)"
+                    binding.tvVocableLearn.text = "$userMail"
                 }
             }
         )

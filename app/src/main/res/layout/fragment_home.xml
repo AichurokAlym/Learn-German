@@ -10,7 +10,7 @@
     <com.google.android.material.card.MaterialCardView
         style="@style/bordered_button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:elevation="30dp"
         app:cardBackgroundColor="#E1F5FE"
         app:cardCornerRadius="10dp">
