@@ -8,11 +8,11 @@ class QuizRepository {
         return listOf(
             Quiz(
                 "Am Freitag fahre ich _____ meinen Eltern.",
-                "nach",
+                "zu",
                 "bei",
                 "mit",
-                "zu",
-                4
+                "nach",
+                1
             ),
             Quiz(
                 "Familie Schöne fährt im Winter immer _____ Schweiz zum Skifahren.",

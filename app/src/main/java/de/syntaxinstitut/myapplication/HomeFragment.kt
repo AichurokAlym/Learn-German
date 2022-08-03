@@ -54,10 +54,6 @@ class HomeFragment : Fragment() {
             }
         )
 
-       /* binding.logoutButton.setOnClickListener {
-            viewModel.logout()
-        }*/
-
         binding.btNomen.setOnClickListener {
             findNavController().navigate(HomeFragmentDirections.actionMenuFragmentToVocabularyFragment())
         }
@@ -67,8 +63,8 @@ class HomeFragment : Fragment() {
 
         }
 
-        binding.btMyQuestions.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToMyQuiz())
+        binding.btTranslator.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToTranslationFragment())
         }
 
         binding.btMyVocableBox.setOnClickListener {
