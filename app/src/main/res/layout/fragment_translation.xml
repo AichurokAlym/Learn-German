@@ -10,13 +10,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".TranslationFragment">
+        tools:context=".translate.TranslationFragment">
 
 
         <EditText
             android:id="@+id/tvTranslation"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:hint="Text eingeben!"
             android:textSize="34sp"
             app:layout_constraintBottom_toTopOf="@id/tvTranslate"
             app:layout_constraintEnd_toEndOf="parent"
@@ -28,7 +29,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="TextView"
+            android:text=" |"
             android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

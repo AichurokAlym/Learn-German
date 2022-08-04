@@ -45,6 +45,10 @@ class VocableViewModel(application: Application) : AndroidViewModel(application)
         _tvWord = word
     }
 
+    fun setCurrentCardView(view: View) {
+        _currentSelected = view
+    }
+
     fun changeColor(artikel: String, tvColor: String, cvBackgroundColor: String) {
         try {
             val tv = _currentSelectedArtikelTV as TextView

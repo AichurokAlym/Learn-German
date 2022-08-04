@@ -5,11 +5,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.google.android.material.card.MaterialCardView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import de.syntaxinstitut.myapplication.R
 import de.syntaxinstitut.myapplication.databinding.FragmentVocableBinding
 
@@ -48,6 +48,22 @@ class VocableFragment : Fragment() {
         val recyclerView = binding.rvVocable
 
         recyclerView.adapter = VocableAdapter(viewModel.vocableList, ::selectCallBack)
+
+        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            var scrollDy = 0
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+             val lm = recyclerView.layoutManager!! as LinearLayoutManager
+               //lm.findViewByPosition(lm.findFirstVisibleItemPosition())
+
+               viewModel.setCurrentCardView(lm.findViewByPosition(lm.findFirstVisibleItemPosition())!!)
+                viewModel.currentSelected!!.setBackgroundColor(Color.GREEN)
+
+            }
+
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                scrollDy += dy
+            }
+        })
 
         binding.btDer.setOnClickListener {
           if(viewModel.correctArtikel == "der") {

@@ -1,7 +1,6 @@
-package de.syntaxinstitut.myapplication
+package de.syntaxinstitut.myapplication.translate
 
 import android.os.Bundle
-import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,8 +9,6 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import de.syntaxinstitut.myapplication.databinding.FragmentTranslationBinding
-import de.syntaxinstitut.myapplication.translate.TranslateRepository
-import de.syntaxinstitut.myapplication.translate.TranslateViewModel
 
 class TranslationFragment : Fragment() {
 
@@ -44,9 +41,6 @@ class TranslationFragment : Fragment() {
                 binding.tvTranslate.text = it.data.translations[0].translatedText.replace("%20", " ")
             }
         )
-
-
-
     }
 
 }

@@ -5,7 +5,6 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import okhttp3.RequestBody
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.*
@@ -22,7 +21,7 @@ val client: OkHttpClient = OkHttpClient.Builder().addInterceptor { chain ->
         .addHeader("X-RapidAPI-Key",  "dff97797c8mshcf1709abaa2820fp115527jsn2407952c2d05")
         .addHeader("X-RapidAPI-Host", "google-translate1.p.rapidapi.com")
         //.post(body)
-        .url("https://google-translate1.p.rapidapi.com/")
+        //.url("https://google-translate1.p.rapidapi.com/")
 
         .build()
     chain.proceed(newRequest)

@@ -14,7 +14,7 @@ class TranslateRepository(private val translateApi: TranslationApi) {
     //q = query (übersetzende Wort)
     suspend fun translate(q: String) {
         try {
-            val query = "q="+ q.replace(" ", "%20")
+            val query = q.replace(" ", "%20")
             _translation.value = translateApi.retrofitService.translate(query, "en", "de")
         } catch (e: Exception) {
             Log.e("AAA", e.toString())

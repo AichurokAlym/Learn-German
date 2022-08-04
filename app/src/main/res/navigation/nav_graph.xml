@@ -136,6 +136,6 @@
     </fragment>
     <fragment
         android:id="@+id/translationFragment"
-        android:name="de.syntaxinstitut.myapplication.TranslationFragment"
+        android:name="de.syntaxinstitut.myapplication.translate.TranslationFragment"
         android:label="TranslationFragment" />
 </navigation>
