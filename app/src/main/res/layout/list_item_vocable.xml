@@ -24,7 +24,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/materialCardView"
                 android:layout_width="380dp"
-                android:layout_height="140dp"
+                android:layout_height="150dp"
                 android:layout_marginTop="8dp"
                 android:elevation="30dp"
                 app:cardBackgroundColor="#EDE7F6"
@@ -96,24 +96,45 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
 
-            <EditText
-                android:id="@+id/editTextWriteSentence"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="schreibe hier einen Beispielsatzt"
-                android:inputType="textPersonName"
-                android:textSize="25sp"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btDer"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:background="#000000"
+                android:text="Der"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/tvExsampleSentence"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btDie"
+                app:layout_constraintStart_toStartOf="parent"></androidx.appcompat.widget.AppCompatButton>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btDie"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:background="#F43535"
+                android:text="Die"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/btDer"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvExsampleSentence" />
+                app:layout_constraintTop_toTopOf="@+id/btDer"
+                app:layout_constraintVertical_bias="0.0"></androidx.appcompat.widget.AppCompatButton>
 
-            <RadioButton
-                android:id="@+id/radioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Wähle den richtigen Artikel"
-                app:layout_constraintStart_toStartOf="@+id/editTextWriteSentence"
-                app:layout_constraintTop_toBottomOf="@+id/editTextWriteSentence" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btDas"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:background="#E8E04F"
+                android:text="Das"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/btDie"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btDie"
+                app:layout_constraintTop_toTopOf="@+id/btDie"
+                app:layout_constraintVertical_bias="0.0"></androidx.appcompat.widget.AppCompatButton>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>

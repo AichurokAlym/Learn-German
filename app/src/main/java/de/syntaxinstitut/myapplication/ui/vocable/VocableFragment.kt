@@ -49,7 +49,7 @@ class VocableFragment : Fragment() {
 
         recyclerView.adapter = VocableAdapter(viewModel.vocableList, ::selectCallBack)
 
-        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+       /* recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             var scrollDy = 0
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
              val lm = recyclerView.layoutManager!! as LinearLayoutManager
@@ -63,9 +63,9 @@ class VocableFragment : Fragment() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 scrollDy += dy
             }
-        })
+        })*/
 
-        binding.btDer.setOnClickListener {
+        /*binding.btDer.setOnClickListener {
           if(viewModel.correctArtikel == "der") {
               viewModel.changeColor("der", "#FFFFFF", "#000000" )
 
@@ -91,7 +91,7 @@ class VocableFragment : Fragment() {
                 viewModel.changeColor("versuche es nochmal!", "#000000", "#EDE7F6")
 
             }
-        }
+        }*/
     }
 
     fun selectCallBack(view: View, cardView: View, correctArtikel: String, word: View) {
