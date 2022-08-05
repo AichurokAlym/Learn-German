@@ -21,7 +21,7 @@ class VocableViewModel(application: Application) : AndroidViewModel(application)
     val vocableList = vRepository.loadVocabularies()
 
 
-    private var _currentSelectedArtikelTV: View? = null
+ /*   private var _currentSelectedArtikelTV: View? = null
     val currentSelectedArtikelTv: View?
     get() = _currentSelectedArtikelTV
 
@@ -35,17 +35,17 @@ class VocableViewModel(application: Application) : AndroidViewModel(application)
 
     private  var _tvWord: View? = null
     val tvWord: View?
-    get() = _tvWord
+    get() = _tvWord*/
 
 
-    fun setCurrentSelected(view: View, cardView: View, correctArtikel: String, word: View){
+   /* fun setCurrentSelected(view: View, cardView: View, correctArtikel: String, word: View){
         _currentSelectedArtikelTV = view
         _currentSelected = cardView
         _correctArtikel = correctArtikel
         _tvWord = word
-    }
+    }*/
 
-    fun setCurrentCardView(view: View) {
+   /* fun setCurrentCardView(view: View) {
         _currentSelected = view
     }
 
@@ -66,5 +66,5 @@ class VocableViewModel(application: Application) : AndroidViewModel(application)
             Log.e ("AAA", e.toString())
         }
 
-    }
+    }*/
 }

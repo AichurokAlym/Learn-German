@@ -5,5 +5,6 @@ data class Vocable(
     val word: String,
     val artikel: String,
     val wordsTranslate: String,
-    val exampleSentence: String
+    val exampleSentence: String,
+    var isClickt: Boolean
 )

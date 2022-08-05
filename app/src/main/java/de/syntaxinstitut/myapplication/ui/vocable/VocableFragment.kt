@@ -47,7 +47,7 @@ class VocableFragment : Fragment() {
 
         val recyclerView = binding.rvVocable
 
-        recyclerView.adapter = VocableAdapter(viewModel.vocableList, ::selectCallBack)
+        recyclerView.adapter = VocableAdapter(viewModel.vocableList)
 
        /* recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             var scrollDy = 0
@@ -94,9 +94,9 @@ class VocableFragment : Fragment() {
         }*/
     }
 
-    fun selectCallBack(view: View, cardView: View, correctArtikel: String, word: View) {
+    /*fun selectCallBack(view: View, cardView: View, correctArtikel: String, word: View) {
         viewModel.setCurrentSelected(view, cardView, correctArtikel, word )
 
-    }
+    }*/
 
 }

@@ -23,14 +23,13 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/materialCardView"
-                android:layout_width="380dp"
+                android:layout_width="400dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="8dp"
                 android:elevation="30dp"
                 app:cardBackgroundColor="#EDE7F6"
-                app:cardCornerRadius="25dp"
+                app:cardCornerRadius="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.546"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -39,7 +38,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/tvVocableBox"
+                        android:id="@+id/tvWord"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
@@ -76,9 +75,20 @@
                         android:textSize="30sp"
                         android:textStyle="bold"
                         android:visibility="invisible"
-                        app:layout_constraintEnd_toEndOf="@+id/tvVocableBox"
-                        app:layout_constraintStart_toStartOf="@+id/tvVocableBox"
+                        app:layout_constraintEnd_toEndOf="@+id/tvWord"
+                        app:layout_constraintStart_toStartOf="@+id/tvWord"
                         app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.983"
+                        app:srcCompat="@drawable/translation" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </com.google.android.material.card.MaterialCardView>
@@ -94,21 +104,20 @@
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
+                app:layout_constraintTop_toBottomOf="@+id/btDer" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btDer"
                 android:layout_width="100dp"
                 android:layout_height="60dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
                 android:background="#000000"
                 android:text="Der"
                 android:textColor="@color/white"
-                app:layout_constraintTop_toBottomOf="@+id/tvExsampleSentence"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/btDie"
-                app:layout_constraintStart_toStartOf="parent"></androidx.appcompat.widget.AppCompatButton>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView"
+                app:layout_constraintVertical_bias="0.116"></androidx.appcompat.widget.AppCompatButton>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btDie"

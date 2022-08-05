@@ -2,7 +2,6 @@ package de.syntaxinstitut.myapplication.ui.vocable
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,13 +10,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.card.MaterialCardView
 import de.syntaxinstitut.myapplication.R
-import de.syntaxinstitut.myapplication.data.VocableRepository
 import de.syntaxinstitut.myapplication.data.model.Vocable
 
 
 class VocableAdapter(
     private val dataset: List<Vocable>,
-    private val selectCallBack: (View,View,String, View) -> Unit
+   // private val selectCallBack: (View,View,String, View) -> Unit
 ) : RecyclerView.Adapter<VocableAdapter.ItemViewHolder>() {
 
 
@@ -25,7 +23,7 @@ class VocableAdapter(
 
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvArtikel: TextView = itemView.findViewById(R.id.tvArtikel)
-        val tvWord: TextView = itemView.findViewById(R.id.tvVocableBox)
+        val tvWord: TextView = itemView.findViewById(R.id.tvWord)
         val tvTranslate: TextView = itemView.findViewById(R.id.tvTranslate)
         val tvExampleSentence: TextView = itemView.findViewById(R.id.tvExsampleSentence)
         val cvCardView: MaterialCardView = itemView.findViewById(R.id.materialCardView)
@@ -56,6 +54,12 @@ class VocableAdapter(
         holder.btDas.text = "das"
         holder.btDie.text = "die"
 
+        if(!vocable.isClickt) {
+            holder.cvCardView.setBackgroundColor(Color.parseColor("#EDE7F6"))
+            holder.tvArtikel.visibility = View.INVISIBLE
+            holder.tvWord.setBackgroundColor(Color.parseColor("#EDE7F6"))
+        }
+
         holder.cvCardView.setOnClickListener {
             it.animate()
                 .rotationYBy(180f)
@@ -64,7 +68,7 @@ class VocableAdapter(
                     if (holder.showTranslate) {
                         holder.tvTranslate.visibility = View.GONE
                         holder.tvWord.visibility = View.VISIBLE
-                        holder.tvArtikel.visibility = View.INVISIBLE
+                        holder.tvArtikel.visibility = View.VISIBLE
                     } else {
                         holder.tvTranslate.visibility = View.VISIBLE
                         holder.tvArtikel.visibility = View.INVISIBLE
@@ -78,14 +82,17 @@ class VocableAdapter(
 
         holder.btDer.setOnClickListener {
             checkArtikel (dataset[position].artikel, holder.btDer, holder.cvCardView, holder.tvArtikel, holder.tvWord)
+            vocable.isClickt = true
         }
 
         holder.btDas.setOnClickListener {
             checkArtikel (dataset[position].artikel, holder.btDas, holder.cvCardView, holder.tvArtikel, holder.tvWord)
+            vocable.isClickt = true
         }
 
         holder.btDie.setOnClickListener {
             checkArtikel (dataset[position].artikel, holder.btDie, holder.cvCardView, holder.tvArtikel, holder.tvWord)
+            vocable.isClickt = true
         }
 
 
