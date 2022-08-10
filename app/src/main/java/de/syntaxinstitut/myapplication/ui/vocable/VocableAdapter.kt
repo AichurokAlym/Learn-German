@@ -124,7 +124,13 @@ class VocableAdapter(
 
             tv.setBackgroundColor(color.color)
             tv.setTextColor(tvColor)
-
+        } else {
+            tvArtikel.text = "versuche es nochmal!"
+            cv.setBackgroundColor(Color.parseColor("#EDE7F6"))
+            tvArtikel.setTextColor(Color.parseColor("#000000"))
+            tv.setTextColor(Color.parseColor("#000000"))
+            tvArtikel.setBackgroundColor(Color.parseColor("#EDE7F6"))
+            tv.setBackgroundColor(Color.parseColor("#EDE7F6"))
         }
     }
 

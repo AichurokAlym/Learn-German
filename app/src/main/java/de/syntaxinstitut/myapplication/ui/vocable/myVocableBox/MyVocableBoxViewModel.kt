@@ -27,6 +27,7 @@ class MyVocableBoxViewModel(application: Application) : AndroidViewModel(applica
     val selectedVocable: LiveData<MyVocable>
         get() = _selectedVocable
 
+    //wird neue wörter hinzugefügt
     fun insertVocable(myVocable: MyVocable) {
         viewModelScope.launch {
             myVRepository.insert(myVocable)
@@ -34,6 +35,7 @@ class MyVocableBoxViewModel(application: Application) : AndroidViewModel(applica
         }
     }
 
+    //mit dieser Funktion wird Wörter aktualisiert
     fun updateVocable(myVocable: MyVocable) {
         viewModelScope.launch {
             myVRepository.update(myVocable)
@@ -41,6 +43,7 @@ class MyVocableBoxViewModel(application: Application) : AndroidViewModel(applica
         }
     }
 
+    //mit dieser Funktion wird Wörter aus der Liste gelöscht
     fun deleteVocable(myVocable: MyVocable) {
         viewModelScope.launch {
             myVRepository.delete(myVocable)

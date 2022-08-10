@@ -23,7 +23,7 @@ class VocableRepository {
             ),
             Vocable(
                 "Umwelt",
-                "wetter",
+                "Wetter",
                 "das",
                 "weather",
                 "Wie wird das Wetter morgen?",
