@@ -6,8 +6,10 @@ import de.syntaxinstitut.myapplication.data.VerbRepository
 
 class VerbViewModel(application: Application) : AndroidViewModel(application){
 
+    // hier wird eine AppRepository Instanz erstellt
     val verbRepository = VerbRepository()
 
+    //hier werden Verben aus dem Repository geladen.
     val verbList = verbRepository.loadVerbs()
 
 }

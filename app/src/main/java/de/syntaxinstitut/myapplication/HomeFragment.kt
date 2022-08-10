@@ -17,12 +17,18 @@ import de.syntaxinstitut.myapplication.ui.MainViewModel
 
 class HomeFragment : Fragment() {
 
+    /** Bindet das XML-View mit der Klasse um auf die Elemente zugreifen zu können */
     private lateinit var binding: FragmentHomeBinding
 
+    /** Das ViewModel zu diesem Fragment */
     private val viewModel: MainViewModel by activityViewModels()
 
     private lateinit var userMail: String
 
+    /**
+     * Lifecycle Funktion onCreateView
+     * Hier wird das binding initialisiert und das Layout gebaut
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -38,6 +44,10 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * Lifecycle Funktion onViewCreated
+     * Hier werden die Elemente eingerichtet und z.B. onClickListener gesetzt
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

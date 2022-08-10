@@ -12,12 +12,14 @@ import com.google.android.material.card.MaterialCardView
 import de.syntaxinstitut.myapplication.data.VocableRepository
 
 /**
- * Das ViewModel des One Fragments
+ * Das ViewModel des VocableFragments
  */
 class VocableViewModel(application: Application) : AndroidViewModel(application) {
 
-
+    //eine QuizRepository Instanz wird erstellt
     val vRepository = VocableRepository()
+
+    //die Liste aus der VocableRepository wird geladen
     val vocableList = vRepository.loadVocabularies()
 
 

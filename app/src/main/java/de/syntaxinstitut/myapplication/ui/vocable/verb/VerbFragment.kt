@@ -14,10 +14,16 @@ import de.syntaxinstitut.myapplication.ui.vocable.VocableViewModel
 
 class VerbFragment : Fragment() {
 
+    // Das binding für das QuizFragment wird deklariert
     private lateinit var binding: FragmentVerbBinding
 
+    // Hier wird das ViewModel, in dem die Logik stattfindet, geholt
     private val viewModel: VerbViewModel by viewModels()
 
+    /**
+     * Lifecycle Funktion onCreateView
+     * Hier wird das binding initialisiert und das Layout gebaut
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,11 +34,17 @@ class VerbFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * Lifecycle Funktion onViewCreated
+     * Hier werden die Elemente eingerichtet und z.B. onClickListener gesetzt
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //recyclerView von Layout wird mit code verknüpft
         val rvVerb = binding.rvVerb
 
+        //VerbAdapter wird als Adapter festgelegt
         rvVerb.adapter = VerbAdapter(viewModel.verbList)
     }
 

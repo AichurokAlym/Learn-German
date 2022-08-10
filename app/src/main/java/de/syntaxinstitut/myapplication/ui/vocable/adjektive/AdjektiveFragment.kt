@@ -12,12 +12,18 @@ import de.syntaxinstitut.myapplication.databinding.FragmentAdjektiveBinding
 
 class AdjektiveFragment : Fragment() {
 
+    // Hier wird das ViewModel, in dem die Logik stattfindet, geholt
     private val viewModel: AdjektiveViewModel by viewModels()
 
+    // Das binding für das QuizFragment wird deklariert
     private lateinit var binding: FragmentAdjektiveBinding
 
     lateinit var adapter: AdjektiveAdapter
 
+    /**
+     * Lifecycle Funktion onCreateView
+     * Hier wird das binding initialisiert und das Layout gebaut
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,6 +33,10 @@ class AdjektiveFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * Lifecycle Funktion onViewCreated
+     * Hier werden die Elemente eingerichtet
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -34,6 +44,7 @@ class AdjektiveFragment : Fragment() {
 
         imageList.setHasFixedSize(true)
 
+        //wird Images von der Api geladen
         viewModel.images.observe(
             viewLifecycleOwner,
             Observer {
@@ -46,6 +57,7 @@ class AdjektiveFragment : Fragment() {
             }
         )
 
+        //loading liefert ApiStatus zurück
         viewModel.loading.observe(
             viewLifecycleOwner,
             Observer {

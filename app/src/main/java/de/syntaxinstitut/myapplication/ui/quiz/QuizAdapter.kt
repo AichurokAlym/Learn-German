@@ -16,6 +16,7 @@ class QuizAdapter(
     private val checkAnswerUpdateUI: (Quiz, Int) -> Boolean
 ) : RecyclerView.Adapter<QuizAdapter.ItemViewHolder>() {
 
+    //der ItemViewHolder weiß welche Teile des Layouts beim Recycling angepasst werden
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvQuestion: TextView = itemView.findViewById(R.id.tvTranslate)
         val answerA: AppCompatButton = itemView.findViewById(R.id.btAnswerA)
@@ -29,9 +30,12 @@ class QuizAdapter(
      * hier werden neue ViewHolder erstellt
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
+
+        // das itemLayout wird gebaut
         val itemLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_item_quiz, parent, false)
 
+        // und in einem ViewHolder zurückgegeben
         return ItemViewHolder(itemLayout)
     }
 
@@ -41,7 +45,7 @@ class QuizAdapter(
      */
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
 
-        // Hole den Kontakt aus dem dataset
+        // hier wird Quiz Elemente aus dem dataset geholt
         val quiz = dataset[position]
 
         holder.tvQuestion.text = quiz.question
@@ -50,6 +54,7 @@ class QuizAdapter(
         holder.answerC.text = quiz.answerC
         holder.answerD.text = quiz.answerD
 
+        //alle Antwort Varianten werden auf neutrale answer_cards_style neu gesetzt
         if (!quiz.clicked) {
             holder.answerA.foreground = context.getDrawable(R.drawable.answer_cards_style)
             holder.answerB.foreground = context.getDrawable(R.drawable.answer_cards_style)
@@ -58,39 +63,46 @@ class QuizAdapter(
         }
 
 
+        // mit checkedAnswer wird geklickte AntwortVariant geprüft
+        // und alle andere Atwort Varianten werden nicht clickbar gemacht
         holder.answerA.setOnClickListener {
             checkedAnswer(quiz, 1, it as AppCompatButton)
             holder.answerB.isClickable = false
             holder.answerC.isClickable = false
             holder.answerD.isClickable = false
-            //geklickte Antworten speichern
         }
 
+        // mit checkedAnswer wird geklickte AntwortVariant geprüft
+        // und alle andere Atwort Varianten werden nicht clickbar gemacht
         holder.answerB.setOnClickListener {
             checkedAnswer(quiz, 2, it as AppCompatButton)
             holder.answerA.isClickable = false
             holder.answerC.isClickable = false
             holder.answerD.isClickable = false
-            //geklickte Antworten speichern
         }
 
+        // mit checkedAnswer wird geklickte AntwortVariant geprüft
+        // und alle andere Atwort Varianten werden nicht clickbar gemacht
         holder.answerC.setOnClickListener {
             checkedAnswer(quiz, 3, it as AppCompatButton)
             holder.answerA.isClickable = false
             holder.answerB.isClickable = false
             holder.answerD.isClickable = false
-            //geklickte Antworten speichern
         }
 
+        // mit checkedAnswer wird geklickte AntwortVariant geprüft
+        // und alle andere Atwort Varianten werden nicht clickbar gemacht
         holder.answerD.setOnClickListener {
            checkedAnswer(quiz, 4, it as AppCompatButton)
             holder.answerA.isClickable = false
             holder.answerB.isClickable = false
             holder.answerC.isClickable = false
-            //geklickte Antworten speichern
         }
     }
 
+    //diese Funktion prüft die Antwort Varianten
+    //fals die Antwort richtig ist, dann wird Buttons Farbe auf grün geändert
+    //und wenn die Antwort falsch ist, dann wird Buttons Farbe auf rot geändert
     fun checkedAnswer (quiz: Quiz, int: Int, button: AppCompatButton) {
         val success = checkAnswerUpdateUI(quiz, int)
         if (success == true) {
@@ -101,6 +113,7 @@ class QuizAdapter(
         }
     }
 
+    // damit der LayoutManager weiß wie lang die Liste ist
     override fun getItemCount(): Int {
        return dataset.size
     }

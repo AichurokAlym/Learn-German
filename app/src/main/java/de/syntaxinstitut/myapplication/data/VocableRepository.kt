@@ -2,8 +2,14 @@ package de.syntaxinstitut.myapplication.data
 
 import de.syntaxinstitut.myapplication.data.model.Vocable
 
+/**
+ * Diese Klasse stellt die benötigten Informationen zur Verfügung
+ */
 class VocableRepository {
 
+    /**
+     * Diese Funktion liefert eine Liste an Vocable Objekten zurück.
+     */
     fun loadVocabularies() : List<Vocable> {
         val umwelt = "Umwelt"
         return listOf(

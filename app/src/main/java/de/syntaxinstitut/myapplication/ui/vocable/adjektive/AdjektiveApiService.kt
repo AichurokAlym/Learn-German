@@ -9,10 +9,12 @@ import retrofit2.http.GET
 
 const val BASE_URL = "http://syntax-institut.com/public/apps/AichurokAlymkulova/"
 
+//um Antworten direkt zu übersetzen wird ein moshi angelegt
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
     .build()
 
+//hier wird retrofit gebaut welche moshi und base_url verwendet
 private val retrofit = Retrofit.Builder()
     .addConverterFactory(MoshiConverterFactory.create(moshi))
     .baseUrl(BASE_URL)
@@ -20,6 +22,7 @@ private val retrofit = Retrofit.Builder()
 
 interface AdjektiveApiService {
 
+    //GET- Request liefert Imageliste zurück
     @GET("data.json")
     suspend fun getImages(): List<Adjektive>
 

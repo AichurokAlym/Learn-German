@@ -12,7 +12,7 @@ import retrofit2.http.*
 const val BASE_URL = "https://google-translate1.p.rapidapi.com/"
 
 val mediaType = "application/x-www-form-urlencoded".toMediaTypeOrNull()
-//val body = RequestBody.create(mediaType, "target=en&source=de")
+
 
 val client: OkHttpClient = OkHttpClient.Builder().addInterceptor { chain ->
     val newRequest: Request = chain.request().newBuilder()
@@ -20,16 +20,17 @@ val client: OkHttpClient = OkHttpClient.Builder().addInterceptor { chain ->
         .addHeader("Accept-Encoding", "application/gzip")
         .addHeader("X-RapidAPI-Key",  "dff97797c8mshcf1709abaa2820fp115527jsn2407952c2d05")
         .addHeader("X-RapidAPI-Host", "google-translate1.p.rapidapi.com")
-        //.post(body)
-        //.url("https://google-translate1.p.rapidapi.com/")
 
         .build()
     chain.proceed(newRequest)
 }.build()
+
+//um Antworten direkt zu übersetzen wird ein moshi angelegt
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
     .build()
 
+//hier wird retrofit gebaut welche client, moshi und base_url verwendet
 private val retrofit = Retrofit.Builder()
     .client(client)
     .addConverterFactory(MoshiConverterFactory.create(moshi))

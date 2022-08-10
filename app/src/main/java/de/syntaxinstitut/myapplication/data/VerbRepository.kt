@@ -2,8 +2,15 @@ package de.syntaxinstitut.myapplication.data
 
 import de.syntaxinstitut.myapplication.data.model.Verb
 
+/**
+ * Diese Klasse stellt die benötigten Informationen zur Verfügung
+ */
 class VerbRepository {
 
+    /**
+     * Diese Funktion liefert eine Liste an Question Objekten zurück, in denen die Frage, die
+     * Antwortmöglichkeiten, der Index der richtigen Antwort und die Preisstufe gespeichert sind
+     */
     fun loadVerbs(): List<Verb> {
         return listOf(
             Verb(

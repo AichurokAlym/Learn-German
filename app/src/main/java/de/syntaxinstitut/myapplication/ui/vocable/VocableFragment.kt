@@ -1,6 +1,5 @@
 package de.syntaxinstitut.myapplication.ui.vocable
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,8 +7,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import de.syntaxinstitut.myapplication.R
 import de.syntaxinstitut.myapplication.databinding.FragmentVocableBinding
 
@@ -27,6 +24,10 @@ class VocableFragment : Fragment() {
     private val viewModel: VocableViewModel by viewModels()
 
 
+    /**
+     * Lifecycle Funktion onCreateView
+     * Hier wird das binding initialisiert und das Layout gebaut
+     */
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -41,12 +42,17 @@ class VocableFragment : Fragment() {
         return binding.root
     }
 
-
+    /**
+     * Lifecycle Funktion onViewCreated
+     * Hier werden die Elemente eingerichtet und z.B. onClickListener gesetzt
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //recyclerView von Layout wird mit code verknüpft
         val recyclerView = binding.rvVocable
 
+        //VocableAdapter wird als Adapter festgelegt
         recyclerView.adapter = VocableAdapter(viewModel.vocableList)
 
        /* recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {

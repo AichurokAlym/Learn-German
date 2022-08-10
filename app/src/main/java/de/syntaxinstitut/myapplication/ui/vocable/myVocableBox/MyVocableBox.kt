@@ -16,28 +16,40 @@ import de.syntaxinstitut.myapplication.databinding.FragmentMyVocableBoxBinding
 
 class MyVocableBox : Fragment() {
 
+    // Das binding für das MyVocableBoxFragment wird deklariert
     private lateinit var binding: FragmentMyVocableBoxBinding
 
+    // Hier wird das ViewModel, in dem die Logik stattfindet, geholt
     private val viewModel: MyVocableBoxViewModel by activityViewModels()
 
 
+    /**
+     * Lifecycle Funktion onCreateView
+     * Hier wird das binding initialisiert und das Layout gebaut
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_my_vocable_box, container, false)
 
+        // Der LifecycleOwner wird zugewiesem, damit LiveData automatisch vom Layout beobachtet wird
         binding.lifecycleOwner = this.viewLifecycleOwner
 
         return binding.root
     }
 
+    /**
+     * Lifecycle Funktion onViewCreated
+     * Hier werden die Elemente eingerichtet und z.B. onClickListener gesetzt
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //recyclerView von Layout wird mit code verknüpft
         val myVocableRV = binding.recyclerView
 
-       // myVocableRV.adapter = MyVocableBoxAdapter()
+
         viewModel.vocableList.observe(
             viewLifecycleOwner,
             Observer {
@@ -46,6 +58,7 @@ class MyVocableBox : Fragment() {
             }
         )
 
+        //hier wird zum MyVocableAddFragment navigiert um neue Wörter hinzufügen
         binding.btAddVT.setOnClickListener{
             findNavController().navigate(MyVocableBoxDirections.actionMyVocableBoxToMyVocableAdd())
 

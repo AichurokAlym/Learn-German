@@ -13,8 +13,10 @@ enum class ApiStatus { LOADING, ERROR, DONE }
 
 class AdjektiveViewModel : ViewModel() {
 
+    // hier wird eine AppRepository Instanz erstellt, mit dem Parameter AdjektiveApi
     private val repository = AdjektivRepository(AdjektiveApi)
 
+    // hier werden die images aus dem repository in einer eigenen Variablen gespeichert
     val images = repository.imageList
 
     private val _loading = MutableLiveData<ApiStatus>()
@@ -25,6 +27,10 @@ class AdjektiveViewModel : ViewModel() {
         loadData()
     }
 
+    /**
+     * Diese Funktion ruft die Repository-Funktion zum Laden der Images
+     * innerhalb einer Coroutine auf
+     */
     fun loadData() {
         viewModelScope.launch {
             _loading.value = ApiStatus.LOADING

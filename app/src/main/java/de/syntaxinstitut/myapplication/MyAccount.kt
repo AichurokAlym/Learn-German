@@ -15,12 +15,18 @@ import de.syntaxinstitut.myapplication.ui.MainViewModel
 
 class MyAccount: Fragment() {
 
+    // Das Binding zur XML-Datei
   private lateinit var binding: FragmentMyAccountBinding
 
+    // Hier wird das ViewModel, in dem die Logik stattfindet, geholt
   private val viewModel: MainViewModel by activityViewModels()
 
     private lateinit var userMail: String
 
+    /**
+     * Lifecycle Funktion onCreateView
+     * Hier wird das binding initialisiert und das Layout gebaut
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,6 +39,10 @@ class MyAccount: Fragment() {
         return binding.root
     }
 
+    /**
+     * Lifecycle Funktion onViewCreated
+     * Hier werden die Elemente eingerichtet und z.B. onClickListener gesetzt
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

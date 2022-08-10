@@ -5,8 +5,11 @@ import androidx.lifecycle.MutableLiveData
 import de.syntaxinstitut.myapplication.data.model.Adjektive
 import kotlinx.coroutines.delay
 
+/**
+ * Diese Klasse holt die Informationen und stellt sie mithilfe von Live Data dem Rest
+ * der App zur Verfügung
+ */
 class AdjektivRepository(
-
     private val api: AdjektiveApi
 ) {
 
@@ -14,6 +17,10 @@ class AdjektivRepository(
     val imageList: LiveData<List<Adjektive>>
         get() = _imageList
 
+    /**
+     * Diese Funktion ruft die Daten aus dem API Service ab und speichert die Antwort in der
+     * Variable imageList.
+     */
     suspend fun getImages() {
         _imageList.value = api.retrofitService.getImages()
     }

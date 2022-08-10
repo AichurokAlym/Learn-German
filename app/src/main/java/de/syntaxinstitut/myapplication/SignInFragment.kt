@@ -14,10 +14,16 @@ import de.syntaxinstitut.myapplication.ui.MainViewModel
 
 class SignInFragment : Fragment() {
 
+    /** Das ViewModel zu diesem Fragment */
     private val viewModel: MainViewModel by activityViewModels()
 
+    /** Bindet das XML-View mit der Klasse um auf die Elemente zugreifen zu können */
     private lateinit var binding: FragmentSignInBinding
 
+    /**
+     * Lifecycle Funktion onCreateView
+     * Hier wird das binding initialisiert und das Layout gebaut
+     */
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,6 +34,10 @@ class SignInFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * Lifecycle Funktion onViewCreated
+     * Hier werden die Elemente eingerichtet und z.B. onClickListener gesetzt
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

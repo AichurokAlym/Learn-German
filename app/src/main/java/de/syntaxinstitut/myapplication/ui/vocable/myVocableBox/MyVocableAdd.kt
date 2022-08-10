@@ -19,25 +19,37 @@ import de.syntaxinstitut.myapplication.databinding.FragmentMyVocableAddBinding
 
 class MyVocableAdd : Fragment() {
 
+    // Das binding für das MyVocableAddFragment wird deklariert
     private lateinit var binding: FragmentMyVocableAddBinding
 
+    // Hier wird das ViewModel, in dem die Logik stattfindet, geholt
     private val viewModel: MyVocableBoxViewModel by viewModels()
 
 
+    /**
+     * Lifecycle Funktion onCreateView
+     * Hier wird das binding initialisiert und das Layout gebaut
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_my_vocable_add, container, false)
 
+        // Der LifecycleOwner wird zugewiesem, damit LiveData automatisch vom Layout beobachtet wird
         binding.lifecycleOwner = this.viewLifecycleOwner
 
         return binding.root
     }
 
+    /**
+     * Lifecycle Funktion onViewCreated
+     * Hier werden die Elemente eingerichtet und z.B. onClickListener gesetzt
+     */
     @SuppressLint("ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         viewModel.complete.observe(
             viewLifecycleOwner,

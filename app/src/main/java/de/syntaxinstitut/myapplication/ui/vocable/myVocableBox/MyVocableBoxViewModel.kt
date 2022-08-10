@@ -12,8 +12,11 @@ import kotlinx.coroutines.launch
 class MyVocableBoxViewModel(application: Application) : AndroidViewModel(application) {
 
     private val database = getDatabase(application)
+
+    // hier wird eine AppRepository Instanz erstellt, mit dem Parameter database
     private val myVRepository = MyVocableBoxRepository(database)
 
+    // hier werden die vocableList aus dem repository in einer eigenen Variablen gespeichert
     val vocableList = myVRepository.vocableList
 
     private val _complete = MutableLiveData<Boolean>()

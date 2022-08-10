@@ -15,8 +15,12 @@ import de.syntaxinstitut.myapplication.databinding.FragmentMyVocableEditBinding
 
 class MyVocableEdit : Fragment() {
 
+    // Das binding für das MyVocableEditFragment wird deklariert
     private lateinit var binding: FragmentMyVocableEditBinding
+
+    // Hier wird das ViewModel, in dem die Logik stattfindet, geholt
     private val viewModel: MyVocableBoxViewModel by activityViewModels()
+
     private var id: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,17 +31,26 @@ class MyVocableEdit : Fragment() {
         }
     }
 
+    /**
+     * Lifecycle Funktion onCreateView
+     * Hier wird das binding initialisiert und das Layout gebaut
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_my_vocable_edit, container, false)
 
+        // Der LifecycleOwner wird zugewiesem, damit LiveData automatisch vom Layout beobachtet wird
         binding.lifecycleOwner = this.viewLifecycleOwner
 
         return binding.root
     }
 
+    /**
+     * Lifecycle Funktion onViewCreated
+     * Hier werden die Elemente eingerichtet und z.B. onClickListener gesetzt
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -46,7 +59,7 @@ class MyVocableEdit : Fragment() {
         if (vocable != null) {
             binding.editNewWord.setText(vocable.newWord)
             binding.editTranslate.setText(vocable.newWordsTranslate)
-           // val index = resources.getStringArray(R.array.)
+
         }
 
         viewModel.complete.observe(viewLifecycleOwner) {

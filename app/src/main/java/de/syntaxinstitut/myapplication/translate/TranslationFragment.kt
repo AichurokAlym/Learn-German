@@ -14,9 +14,14 @@ class TranslationFragment : Fragment() {
 
     private lateinit var binding: FragmentTranslationBinding
 
-    //bei mehreren Fragmenten actyvityViewModels
+    // Hier wird das ViewModel, in dem die Logik stattfindet, geholt
+    //bei mehreren Fragmenten actyvityViewModels verwenden
     private val viewModel: TranslateViewModel by activityViewModels()
 
+    /**
+     * Lifecycle Funktion onCreateView
+     * Hier wird das binding initialisiert und das Layout gebaut
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,6 +31,10 @@ class TranslationFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * Lifecycle Funktion onViewCreated
+     * Hier werden die Elemente eingerichtet
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

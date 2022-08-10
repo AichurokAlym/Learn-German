@@ -16,20 +16,33 @@ class AdjektiveAdapter(
     private val dataset: List<Adjektive>
 ) : RecyclerView.Adapter<AdjektiveAdapter.ItemViewHolder>() {
 
+    /**
+     * der ViewHolder weiß welche Teile des Layouts beim Recycling angepasst werden
+     */
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val imgView = view.findViewById<ImageView>(R.id.list_image)
         val tvAdjektive = view.findViewById<TextView>(R.id.tvAdjektive)
     }
 
+    /**
+     * hier werden neue ViewHolder erstellt
+     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
 
+        // das itemLayout wird gebaut
         val adapterLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_item_adjektive, parent, false)
 
+        // und in einem ViewHolder zurückgegeben
         return ItemViewHolder(adapterLayout)
     }
 
+    /**
+     * hier findet der Recyclingprozess statt
+     * die vom ViewHolder bereitgestellten Parameter erhalten die Information des Listeneintrags
+     */
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+
         val item = dataset[position]
 
         val imgUri = item.image.toUri().buildUpon().scheme("http").build()
@@ -42,6 +55,9 @@ class AdjektiveAdapter(
         holder.tvAdjektive.text = item.adjektiv
     }
 
+    /**
+     * damit der LayoutManager weiß, wie lang die Liste ist
+     */
     override fun getItemCount(): Int {
         return dataset.size
     }

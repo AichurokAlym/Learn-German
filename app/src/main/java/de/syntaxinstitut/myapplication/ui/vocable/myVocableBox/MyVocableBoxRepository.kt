@@ -9,8 +9,10 @@ const val TAG = "MyVocableRepository"
 
 class MyVocableBoxRepository(private val database: MyVocableDatabase) {
 
+    //Speichert das Ergebnis der getAll() Anfrage des DAO
     val vocableList: LiveData<List<MyVocable>> = database.myVocableDatabaseDao.getAll()
 
+    //Fügt mittels der insert Funktion des DAO ein neues Vocable in die Datenbank ein.
     suspend fun insert(myVocable: MyVocable) {
         try {
             database.myVocableDatabaseDao.insert(myVocable)
@@ -19,6 +21,7 @@ class MyVocableBoxRepository(private val database: MyVocableDatabase) {
         }
     }
 
+    //zum aktualisieren
     suspend fun update(myVocable: MyVocable) {
         try {
             database.myVocableDatabaseDao.update(myVocable)
@@ -27,6 +30,7 @@ class MyVocableBoxRepository(private val database: MyVocableDatabase) {
         }
     }
 
+    //zum löschen
     suspend fun delete(myVocable: MyVocable){
         try {
             database.myVocableDatabaseDao.deleteById(myVocable.id)

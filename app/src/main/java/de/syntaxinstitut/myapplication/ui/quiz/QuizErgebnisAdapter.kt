@@ -17,6 +17,7 @@ class QuizErgebnisAdapter(
 
 ) : RecyclerView.Adapter<QuizErgebnisAdapter.ItemViewHolder>() {
 
+    //der ItemViewHolder weiß welche Teile des Layouts beim Recycling angepasst werden
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvQuestion: TextView = itemView.findViewById(R.id.tvTranslate)
         val answerA: AppCompatButton = itemView.findViewById(R.id.btAnswerA)
@@ -26,6 +27,9 @@ class QuizErgebnisAdapter(
 
     }
 
+    /**
+     * hier werden neue ViewHolder erstellt
+     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val itemLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_item_quiz, parent, false)
@@ -33,6 +37,10 @@ class QuizErgebnisAdapter(
         return ItemViewHolder(itemLayout)
     }
 
+    /**
+     * hier findet der Recyclingprozess statt
+     * die vom ViewHolder bereitgestellten Parameter erhalten die Information des Listeneintrags
+     */
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
 
         // Hole den Kontakt aus dem dataset
@@ -45,14 +53,13 @@ class QuizErgebnisAdapter(
         holder.answerD.text = quiz.answerD
 
 
-
-        //checkedAnswer()
-
+        // hier wird alle Atwort Varianten auf nicht clickbar gesetzt
         holder.answerA.isClickable = false
         holder.answerB.isClickable = false
         holder.answerC.isClickable = false
         holder.answerD.isClickable = false
 
+        //um richtige Antworten anzuzeigen werden alle Antwort Varianten auf entsprechende styles gesetzt
         when (quiz.rightAnswer) {
             1 -> {
                 holder.answerA.foreground =context.getDrawable(R.drawable.answer_cards_correct)
@@ -83,6 +90,7 @@ class QuizErgebnisAdapter(
 
     }
 
+    // damit der LayoutManager weiß wie lang die Liste ist
     override fun getItemCount(): Int {
         return dataset.size
     }

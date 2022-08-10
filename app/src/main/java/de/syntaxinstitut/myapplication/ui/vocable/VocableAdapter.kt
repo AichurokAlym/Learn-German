@@ -15,12 +15,10 @@ import de.syntaxinstitut.myapplication.data.model.Vocable
 
 class VocableAdapter(
     private val dataset: List<Vocable>,
-   // private val selectCallBack: (View,View,String, View) -> Unit
 ) : RecyclerView.Adapter<VocableAdapter.ItemViewHolder>() {
 
 
-
-
+    // der ViewHolder weiß welche Teile des Layouts beim Recycling angepasst werden
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvArtikel: TextView = itemView.findViewById(R.id.tvArtikel)
         val tvWord: TextView = itemView.findViewById(R.id.tvWord)
@@ -34,14 +32,19 @@ class VocableAdapter(
 
     }
 
+    // hier werden neue ViewHolder erstellt
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
 
+        // das itemLayout wird gebaut
         val itemLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_item_vocable, parent, false)
 
+        // und in einem ViewHolder zurückgegeben
         return ItemViewHolder(itemLayout)
     }
 
+    // hier findet der Recyclingprozess statt
+    // die vom ViewHolder bereitgestellten Parameter werden verändert
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
 
         val vocable = dataset[position]
@@ -54,12 +57,15 @@ class VocableAdapter(
         holder.btDas.text = "das"
         holder.btDie.text = "die"
 
+
         if(!vocable.isClickt) {
             holder.cvCardView.setBackgroundColor(Color.parseColor("#EDE7F6"))
             holder.tvArtikel.visibility = View.INVISIBLE
             holder.tvWord.setBackgroundColor(Color.parseColor("#EDE7F6"))
         }
 
+        //mit animate Funktion wird sich cvCardView umdrehen
+        // und übersetzung des Wortes wird angezeigt
         holder.cvCardView.setOnClickListener {
             it.animate()
                 .rotationYBy(180f)
@@ -80,6 +86,7 @@ class VocableAdapter(
                 }
         }
 
+        //jedes Wort hat drei ArtikelButtons, damit wird der Richtige Artikel ausgewählt
         holder.btDer.setOnClickListener {
             checkArtikel (dataset[position].artikel, holder.btDer, holder.cvCardView, holder.tvArtikel, holder.tvWord)
             vocable.isClickt = true
@@ -98,10 +105,12 @@ class VocableAdapter(
 
     }
 
+    // damit der LayoutManager weiß wie lang die Liste ist
     override fun getItemCount(): Int {
         return dataset.size
     }
 
+    //mit checkArtikel Funktion wird die Farbe von der CarView und TextView entsprechend verändert.
     fun checkArtikel(correctArtikel: String, artikelButton: Button, cv: MaterialCardView, tvArtikel: TextView, tv: TextView) {
         if (correctArtikel == artikelButton.text) {
            val color = artikelButton.background as ColorDrawable
