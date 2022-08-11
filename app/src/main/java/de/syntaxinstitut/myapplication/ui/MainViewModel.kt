@@ -26,7 +26,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application){
         firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
             if (it.isSuccessful) {
                 login(email, password)
-                print("signup erfolgreich")
             } else {
                 Log.e(TAG, "SignUp failed: ${it.exception}")
             }
@@ -34,11 +33,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application){
     }
 
     fun login(email: String, password: String) {
-        print("abcd")
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
-            print("abcd")
             if (it.isSuccessful) {
-                print("abcd")
                 _currentUser.value = firebaseAuth.currentUser
             } else {
                 Log.e(TAG, "Login feiled: ${it.exception}")
